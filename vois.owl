@@ -1,0 +1,1225 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://streamreasoning.org/vois"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://streamreasoning.org/vois">
+    <Prefix name="" IRI="http://streamreasoning.org/vois#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="sd" IRI="http://www.w3.org/ns/sparql-service-description#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="adms" IRI="http://www.w3.org/ns/adms#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="void" IRI="http://vocab.deri.ie/void#"/>
+    <Prefix name="vois" IRI="http://streamreasoning.org/vois#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">vois</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">2017-03-14</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:type"/>
+        <IRI>http://purl.org/adms/assettype/Ontology</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:partOf"/>
+        <IRI>http://streamreasoning.org/ontologies</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <IRI>#EmanueleDellaValle</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:status"/>
+        <IRI>http://purl.org/adms/status/UnderDevelopment</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Vocabulary of Interlinked Stream (VoIS)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The Vocabulary of Interlinked Stream (VoIS) is an RDF Schema vocabulary for expressing metadata about RDF Streams. It is intended as a bridge between the publishers and users of RDF stream data, with applications ranging from data discovery to cataloging and archiving of datastream. It resuses extising concepts from VoID, TimeLine Ontology, PROV-O. This document provides a formal definition of the new RDF classes and properties introduced for VoIS.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:publisher"/>
+        <IRI>#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">2017-03-14</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="foaf:homepage"/>
+        <IRI></IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <IRI>#RiccardoTommasini</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://streamreasoning.org/vois#</Literal>
+    </Annotation>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#documents"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Document"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#linkPredicate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcterms:Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Window"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WindowedStream"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mappings"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SessionWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActiveWindow"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#distinctObjects"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EmanueleDellaValle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataStream"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#openSearchDescription"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:mbox"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#iGraph"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subset"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#propertyPartition"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="adms:accessURL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://vocab.deri.ie/void"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="void:sessionStartingEvent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#windowDimension"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RiccardoTommasini"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="void:LiDRC"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#inDataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalHoppingWindow"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#windowTarget"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#distinctSubjects"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#exampleResource"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#vocabulary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisibleStream"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#definedEvent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#windowSlidingParameter"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TupleBasedWindow"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#sparqlEndpoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SemanticWindow"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#objectsTarget"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="void:Talis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="void:rdf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#refers"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#streamFormat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TupleBasedTumblingWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimeBasedSlidingWindow"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#rootResource"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rdfs.org/ns/void#DatasetDescription"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:FileFormat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TupleBasedSlidingWindow"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="adms:status"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdfs:Resource"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#classes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#window"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#uriSpace"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sGraph"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#classPartition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#properties"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:type"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalWindow"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#uriRegexPattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rdfs.org/ns/void#TechnicalFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="void:sessionEndingEvent"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:member"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:partOf"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdfs:Class"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdf:Property"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#entities"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalTumblingWindow"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#target"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:status"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#sGraph"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#dataDump"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#uriLookupEndpoint"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#streamSchema"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subjectsTarget"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TupleBasedHoppingWindow"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#windowUnit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#windowingPartition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rdfs.org/ns/void#Linkset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LogicalWindow"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#property"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="void:ttl"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:publisher"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Origin"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalWindow"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:homepage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#triples"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#class"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="sd:NamedGraph"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://rdfs.org/ns/void#DatasetDescription"/>
+        <Class abbreviatedIRI="foaf:Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://rdfs.org/ns/void#Linkset"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActiveWindow"/>
+        <Class IRI="#Window"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LogicalWindow"/>
+        <Class IRI="#Window"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mappings"/>
+        <Class IRI="http://rdfs.org/ns/void#TechnicalFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Origin"/>
+        <Class IRI="http://rdfs.org/ns/void#TechnicalFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalWindow"/>
+        <Class IRI="#Window"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SemanticWindow"/>
+        <Class IRI="#PhysicalWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SessionWindow"/>
+        <Class IRI="#SemanticWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalHoppingWindow"/>
+        <Class IRI="#TimeBasedSlidingWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalTumblingWindow"/>
+        <Class IRI="#TimeBasedSlidingWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalWindow"/>
+        <Class IRI="#LogicalWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TimeBasedSlidingWindow"/>
+        <Class IRI="#TemporalWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TupleBasedHoppingWindow"/>
+        <Class IRI="#TupleBasedSlidingWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TupleBasedSlidingWindow"/>
+        <Class IRI="#TupleBasedWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TupleBasedTumblingWindow"/>
+        <Class IRI="#TupleBasedSlidingWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TupleBasedWindow"/>
+        <Class IRI="#PhysicalWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisibleStream"/>
+        <Class IRI="#WindowedStream"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WindowedStream"/>
+        <Class IRI="#DataStream"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#iGraph"/>
+        <Class abbreviatedIRI="sd:NamedGraph"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sGraph"/>
+        <Class IRI="http://rdfs.org/ns/void#DatasetDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sGraph"/>
+        <Class abbreviatedIRI="sd:NamedGraph"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcterms:Agent"/>
+        <NamedIndividual IRI="#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Person"/>
+        <NamedIndividual IRI="#EmanueleDellaValle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Person"/>
+        <NamedIndividual IRI="#RiccardoTommasini"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcterms:Agent"/>
+        <NamedIndividual abbreviatedIRI="void:LiDRC"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcterms:Agent"/>
+        <NamedIndividual abbreviatedIRI="void:Talis"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#classPartition"/>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subset"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#objectsTarget"/>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#target"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#propertyPartition"/>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subset"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subjectsTarget"/>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#target"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#window"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#windowTarget"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#windowingPartition"/>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subset"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="void:sessionEndingEvent"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#refers"/>
+        <ObjectProperty IRI="#sGraph"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#class"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#objectsTarget"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#property"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subjectsTarget"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#class"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#classPartition"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#dataDump"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#exampleResource"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#feature"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#inDataset"/>
+        <Class abbreviatedIRI="foaf:Document"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#linkPredicate"/>
+        <Class IRI="http://rdfs.org/ns/void#Linkset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#objectsTarget"/>
+        <Class IRI="http://rdfs.org/ns/void#Linkset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#openSearchDescription"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#property"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#propertyPartition"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subjectsTarget"/>
+        <Class IRI="http://rdfs.org/ns/void#Linkset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subset"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#target"/>
+        <Class IRI="http://rdfs.org/ns/void#Linkset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#refers"/>
+        <Class IRI="#sGraph"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#windowTarget"/>
+        <Class IRI="#Window"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#windowingPartition"/>
+        <Class IRI="#WindowedStream"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="void:sessionEndingEvent"/>
+        <Class IRI="#SemanticWindow"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="void:sessionStartingEvent"/>
+        <Class IRI="#SemanticWindow"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#class"/>
+        <Class abbreviatedIRI="rdfs:Class"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#classPartition"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#dataDump"/>
+        <Class abbreviatedIRI="rdfs:Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#exampleResource"/>
+        <Class abbreviatedIRI="rdfs:Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#feature"/>
+        <Class IRI="http://rdfs.org/ns/void#TechnicalFeature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#inDataset"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#linkPredicate"/>
+        <Class abbreviatedIRI="rdf:Property"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#objectsTarget"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#openSearchDescription"/>
+        <Class abbreviatedIRI="foaf:Document"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#property"/>
+        <Class abbreviatedIRI="rdf:Property"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#propertyPartition"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subjectsTarget"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subset"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#target"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#refers"/>
+        <Class IRI="#iGraph"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#windowTarget"/>
+        <Class IRI="#DataStream"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#windowingPartition"/>
+        <Class IRI="#DataStream"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="void:sessionEndingEvent"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="void:sessionStartingEvent"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rdfs.org/ns/void#classes"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rdfs.org/ns/void#distinctObjects"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rdfs.org/ns/void#distinctSubjects"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rdfs.org/ns/void#documents"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rdfs.org/ns/void#entities"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rdfs.org/ns/void#properties"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rdfs.org/ns/void#triples"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rdfs.org/ns/void#uriSpace"/>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rdfs.org/ns/void#classes"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rdfs.org/ns/void#distinctObjects"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rdfs.org/ns/void#distinctSubjects"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rdfs.org/ns/void#documents"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rdfs.org/ns/void#entities"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rdfs.org/ns/void#properties"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rdfs.org/ns/void#triples"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rdfs.org/ns/void#uriSpace"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#Dataset</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A set of RDF triples that are published, maintained or aggregated by a single provider.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#Dataset</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#DatasetDescription</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A web resource whose foaf:primaryTopic or foaf:topics include void:Datasets.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#DatasetDescription</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">dataset description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#Linkset</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A collection of RDF links between two void:Datasets.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#Linkset</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">linkset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#TechnicalFeature</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A technical feature of a void:Dataset, such as a supported RDF serialization format.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#TechnicalFeature</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">technical feature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#class</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The rdfs:Class that is the rdf:type of all entities in a class-based partition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#class</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">class</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#classPartition</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A subset of a void:Dataset that contains only the entities of a certain rdfs:Class.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#classPartition</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">class partition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#classes</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The total number of distinct classes in a void:Dataset. In other words, the number of distinct resources occuring as objects of rdf:type triples in the dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#classes</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">classes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#dataDump</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An RDF dump, partial or complete, of a void:Dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#dataDump</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Dump</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#distinctObjects</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The total number of distinct objects in a void:Dataset. In other words, the number of distinct resources that occur in the object position of triples in the dataset. Literals are included in this count.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#distinctObjects</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">distinct objects</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#distinctSubjects</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The total number of distinct subjects in a void:Dataset. In other words, the number of distinct resources that occur in the subject position of triples in the dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#distinctSubjects</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">distinct subjects</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#documents</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The total number of documents, for datasets that are published as a set of individual documents, such as RDF/XML documents or RDFa-annotated web pages. Non-RDF documents, such as web pages in HTML or images, are usually not included in this count. This property is intended for datasets where the total number of triples or entities is hard to determine. void:triples or void:entities should be preferred where practical.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#documents</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">number of documents</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#entities</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The total number of entities that are described in a void:Dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#entities</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">number of entities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#exampleResource</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">example resource of dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#feature</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">feature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#inDataset</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Points to the void:Dataset that a document is a part of.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#inDataset</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">in dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#linkPredicate</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a link predicate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#objectsTarget</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The dataset describing the objects of the triples contained in the Linkset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#objectsTarget</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Objects Target</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#openSearchDescription</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An OpenSearch description document for a free-text search service over a void:Dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#openSearchDescription</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">open search description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#properties</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The total number of distinct properties in a void:Dataset. In other words, the number of distinct resources that occur in the predicate position of triples in the dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#properties</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">number of properties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#property</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The rdf:Property that is the predicate of all triples in a property-based partition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#property</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#propertyPartition</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A subset of a void:Dataset that contains only the triples of a certain rdf:Property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#propertyPartition</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">property partition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#rootResource</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A top concept or entry point for a void:Dataset that is structured in a tree-like fashion. All resources in a dataset can be reached by following links from its root resources in a small number of steps.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#rootResource</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">root resource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#sparqlEndpoint</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has a SPARQL endpoint at</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#subjectsTarget</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The dataset describing the subjects of triples contained in the Linkset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#subjectsTarget</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Subjects Target</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#subset</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has subset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#target</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">One of the two datasets linked by the Linkset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#target</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Target</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#triples</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The total number of triples contained in a void:Dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#triples</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">number of triples</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#uriLookupEndpoint</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defines a simple URI look-up protocol for accessing a dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#uriLookupEndpoint</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has an URI look-up endpoint at</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#uriRegexPattern</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defines a regular expression pattern matching URIs in the dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#uriRegexPattern</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has URI regular expression pattern</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#uriSpace</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A URI that is a common string prefix of all the entity URIs in a void:Dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#uriSpace</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">URI space</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rdfs.org/ns/void#vocabulary</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A vocabulary that is used in the dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rdfs.org/ns/void#vocabulary</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">vocabulary</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ActiveWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">the window closing at the most recent time instant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#ActiveWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://dblp.uni-trier.de/rec/journals/ijswis/DellAglioVCC14</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ActiveWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">active window</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ActiveWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">present window</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemporalHoppingWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A time based sliding window such that the sliding parameter b is greater thatn the window dimension w.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TemporalHoppingWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Time based hopping window</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemporalTumblingWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A time based sliding window such that the sliding parameter b and the window dimension w are equal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#TemporalTumblingWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://dblp.uni-trier.de/rec/journals/ijswis/DellAglioVCC14</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TemporalTumblingWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Time based tumbling window</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemporalWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A window whose boundaries are two time instants</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#TemporalWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://dblp.uni-trier.de/rec/journals/ijswis/DellAglioVCC14</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TemporalWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Time based window</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TimeBasedSlidingWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A time based  window that starts at time t0, has dimension w, and slides of
+time b</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#TimeBasedSlidingWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://dblp.uni-trier.de/rec/journals/ijswis/DellAglioVCC14</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TimeBasedSlidingWindow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Time Sliding Window</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Window</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a set of RDF statements extracted from a stream</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Window</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://dblp.uni-trier.de/rec/journals/ijswis/DellAglioVCC14</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Window</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">window</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sGraph</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The graph whose foaf:primaryTopic or foaf:topics include vois:DataStream.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sGraph</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sGraph</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#windowTarget</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The datastream that is the target of a window operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#windowTarget</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Window Target</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#windowingPartition</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A subset of a vois:DataStream that contains only triples/graphs that fulfil a certain window specification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#windowingPartition</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">property partition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:homepage"/>
+        <AbbreviatedIRI>void:LiDRC</AbbreviatedIRI>
+        <IRI>http://linkeddata.deri.ie/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <AbbreviatedIRI>void:LiDRC</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">LiDRC</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:homepage"/>
+        <AbbreviatedIRI>void:Talis</AbbreviatedIRI>
+        <IRI>http://www.talis.com/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <AbbreviatedIRI>void:Talis</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Talis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcterms:FileFormat"/>
+        <AbbreviatedIRI>void:rdf</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="adms:accessURL"/>
+        <AbbreviatedIRI>void:rdf</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://vocab.deri.ie/void.rdf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="adms:status"/>
+        <AbbreviatedIRI>void:rdf</AbbreviatedIRI>
+        <IRI>http://purl.org/adms/status/Completed</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcterms:FileFormat"/>
+        <AbbreviatedIRI>void:ttl</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="adms:accessURL"/>
+        <AbbreviatedIRI>void:ttl</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://vocab.deri.ie/void.ttl</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="adms:status"/>
+        <AbbreviatedIRI>void:ttl</AbbreviatedIRI>
+        <IRI>http://purl.org/adms/status/Completed</IRI>
+    </AnnotationAssertion>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#rootResource"/>
+        <IRI>http://rdfs.org/ns/void#Dataset</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#sparqlEndpoint"/>
+        <IRI>http://rdfs.org/ns/void#Dataset</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#uriLookupEndpoint"/>
+        <IRI>http://rdfs.org/ns/void#Dataset</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#uriRegexPattern"/>
+        <IRI>http://rdfs.org/ns/void#Dataset</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#vocabulary"/>
+        <IRI>http://rdfs.org/ns/void#Dataset</IRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
