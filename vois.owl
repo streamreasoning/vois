@@ -178,6 +178,9 @@
         <AnnotationProperty abbreviatedIRI="dcterms:created"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#sourceLocation"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#TupleBasedWindow"/>
     </Declaration>
     <Declaration>
@@ -350,6 +353,9 @@
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tboxLocation"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TemporalWindow"/>
@@ -677,6 +683,10 @@
         <ObjectProperty abbreviatedIRI="void:sessionStartingEvent"/>
         <Class IRI="#Event"/>
     </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#tboxLocation"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="http://rdfs.org/ns/void#classes"/>
         <Class IRI="http://rdfs.org/ns/void#Dataset"/>
