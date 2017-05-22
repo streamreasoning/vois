@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://streamreasoning.org/vois">
-    <Prefix name="" IRI="http://streamreasoning.org/vois#"/>
+    <Prefix name="" IRI="http://streamreasoning.org/vois"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="sd" IRI="http://www.w3.org/ns/sparql-service-description#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
@@ -80,19 +80,10 @@
         <DataProperty IRI="http://rdfs.org/ns/void#documents"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="dcterms:FileFormat"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="adms:status"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#inWindowedStream"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI="foaf:Document"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="rdfs:Resource"/>
+        <ObjectProperty IRI="#inWindowedStream"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://rdfs.org/ns/void#linkPredicate"/>
@@ -107,37 +98,10 @@
         <Class IRI="#Window"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="http://rdfs.org/ns/void#classes"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://rdfs.org/ns/void#uriSpace"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#WindowedStream"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://rdfs.org/ns/void#feature"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#sGraph"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Mappings"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://rdfs.org/ns/void#classPartition"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://rdfs.org/ns/void#properties"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="sd:NamedGraph"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://rdfs.org/ns/void#distinctObjects"/>
@@ -146,22 +110,7 @@
         <NamedIndividual IRI="#EmanueleDellaValle"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="dcterms:type"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PhysicalWindow"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://rdfs.org/ns/void#uriRegexPattern"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#DataStream"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://rdfs.org/ns/void#TechnicalFeature"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#policy"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://rdfs.org/ns/void#openSearchDescription"/>
@@ -173,49 +122,22 @@
         <Class IRI="#iGraph"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="http://rdfs.org/ns/void#subset"/>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#propertyPartition"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="http://rdfs.org/ns/void#propertyPartition"/>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subset"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="adms:accessURL"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="foaf:member"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="http://vocab.deri.ie/void"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#wasActiveAt"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="dcterms:partOf"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="rdfs:Class"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#startingEvent"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="rdf:Property"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://rdfs.org/ns/void#entities"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual abbreviatedIRI="void:LiDRC"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#RiccardoTommasini"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="http://rdfs.org/ns/void#target"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="dcterms:status"/>
+        <NamedIndividual abbreviatedIRI="void:LiDRC"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://rdfs.org/ns/void#inDataset"/>
@@ -224,22 +146,7 @@
         <Class IRI="#Event"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://rdfs.org/ns/void#dataDump"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#sGraph"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasActiveWindow"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://rdfs.org/ns/void#uriLookupEndpoint"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://rdfs.org/ns/void#subjectsTarget"/>
+        <ObjectProperty IRI="#ends"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://rdfs.org/ns/void#distinctSubjects"/>
@@ -257,28 +164,7 @@
         <AnnotationProperty IRI="#streamFormat"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#unit"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#windowingPartition"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://rdfs.org/ns/void#Linkset"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LogicalWindow"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="dc:creator"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasWindow"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#step"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://rdfs.org/ns/void#property"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dcterms:created"/>
@@ -290,52 +176,184 @@
         <DataProperty IRI="#sourceLocation"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SemanticWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dGraph"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#sparqlEndpoint"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#range"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#objectsTarget"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="void:rdf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="void:Talis"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#refers"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#rootResource"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rdfs.org/ns/void#DatasetDescription"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:FileFormat"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="adms:status"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdfs:Resource"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#classes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#uriSpace"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sGraph"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#classPartition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#properties"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#vois:lastUpdated"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="sd:NamedGraph"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:type"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalWindow"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#uriRegexPattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CountingPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rdfs.org/ns/void#TechnicalFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#policy"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:member"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#wasActiveAt"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:partOf"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdfs:Class"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdf:Property"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rdfs.org/ns/void#entities"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:status"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#target"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rdfs.org/ns/void#Dataset"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#dataDump"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#sGraph"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#vois:describes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasActiveWindow"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://rdfs.org/ns/void#uriLookupEndpoint"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#subjectsTarget"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#starts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#unit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#windowingPartition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rdfs.org/ns/void#Linkset"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWindow"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://rdfs.org/ns/void#property"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#vois:streamLocation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="void:ttl"/>
+    </Declaration>
+    <Declaration>
         <AnnotationProperty IRI="#streamSchema"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dcterms:publisher"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="void:ttl"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Origin"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://rdfs.org/ns/void#sparqlEndpoint"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SemanticWindow"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#range"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://rdfs.org/ns/void#objectsTarget"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="foaf:name"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="void:Talis"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual abbreviatedIRI="void:rdf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#endingEvent"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#refers"/>
-    </Declaration>
-    <Declaration>
         <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://rdfs.org/ns/void#rootResource"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#tboxLocation"/>
@@ -353,16 +371,19 @@
         <DataProperty IRI="http://rdfs.org/ns/void#triples"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="foaf:Person"/>
+        <ObjectProperty IRI="#describedBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SessionPolicy"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://rdfs.org/ns/void#class"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+        <ObjectProperty IRI="#affluents"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://rdfs.org/ns/void#DatasetDescription"/>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="http://rdfs.org/ns/void#DatasetDescription"/>
@@ -373,8 +394,8 @@
         <Class IRI="http://rdfs.org/ns/void#Dataset"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LogicalWindow"/>
-        <Class IRI="#Window"/>
+        <Class IRI="#CountingPolicy"/>
+        <Class IRI="#Policy"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Mappings"/>
@@ -390,11 +411,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SemanticWindow"/>
-        <Class IRI="#LogicalWindow"/>
+        <Class IRI="#Window"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SessionPolicy"/>
+        <Class IRI="#Policy"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TemporalWindow"/>
-        <Class IRI="#SemanticWindow"/>
+        <Class IRI="#Window"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Window"/>
@@ -403,6 +428,10 @@
     <SubClassOf>
         <Class IRI="#WindowedStream"/>
         <Class IRI="#DataStream"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dGraph"/>
+        <Class abbreviatedIRI="sd:NamedGraph"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#iGraph"/>
@@ -416,6 +445,11 @@
         <Class IRI="#sGraph"/>
         <Class abbreviatedIRI="sd:NamedGraph"/>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#dGraph"/>
+        <Class IRI="#iGraph"/>
+        <Class IRI="#sGraph"/>
+    </DisjointClasses>
     <ClassAssertion>
         <Class abbreviatedIRI="dcterms:Agent"/>
         <NamedIndividual IRI="#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano"/>
@@ -457,7 +491,11 @@
         <ObjectProperty IRI="http://rdfs.org/ns/void#target"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#endingEvent"/>
+        <ObjectProperty IRI="#describedBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#ends"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -473,13 +511,21 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#startingEvent"/>
+        <ObjectProperty IRI="#starts"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#windowingPartition"/>
         <ObjectProperty IRI="http://rdfs.org/ns/void#subset"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#vois:describes"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#describedBy"/>
+        <ObjectProperty IRI="#vois:describes"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasWindow"/>
         <ObjectProperty IRI="#inWindowedStream"/>
@@ -557,8 +603,20 @@
         <Class IRI="http://rdfs.org/ns/void#Linkset"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#endingEvent"/>
-        <Class IRI="#Policy"/>
+        <ObjectProperty IRI="#affluents"/>
+        <Class IRI="#sGraph"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#describedBy"/>
+        <Class IRI="#iGraph"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ends"/>
+        <Class IRI="#SemanticWindow"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ends"/>
+        <Class IRI="#SessionPolicy"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasActiveWindow"/>
@@ -585,12 +643,16 @@
         <Class IRI="#iGraph"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#startingEvent"/>
-        <Class IRI="#Policy"/>
+        <ObjectProperty IRI="#starts"/>
+        <Class IRI="#SemanticWindow"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#starts"/>
+        <Class IRI="#SessionPolicy"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#unit"/>
-        <Class IRI="#Policy"/>
+        <Class IRI="#CountingPolicy"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#unit"/>
@@ -599,6 +661,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#windowingPartition"/>
         <Class IRI="#WindowedStream"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#vois:describes"/>
+        <Class IRI="#dGraph"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="http://rdfs.org/ns/void#class"/>
@@ -657,8 +723,12 @@
         <Class IRI="http://rdfs.org/ns/void#Dataset"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#endingEvent"/>
-        <Class IRI="#Event"/>
+        <ObjectProperty IRI="#affluents"/>
+        <Class IRI="#dGraph"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#describedBy"/>
+        <Class IRI="#dGraph"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasActiveWindow"/>
@@ -685,12 +755,12 @@
         <Class IRI="#sGraph"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#startingEvent"/>
-        <Class IRI="#Event"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#windowingPartition"/>
         <Class IRI="#DataStream"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#vois:describes"/>
+        <Class IRI="#iGraph"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#range"/>
@@ -702,6 +772,14 @@
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#tboxLocation"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#vois:lastUpdated"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#vois:streamLocation"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
@@ -746,10 +824,22 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#step"/>
-        <Class IRI="#Policy"/>
+        <Class IRI="#CountingPolicy"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#tboxLocation"/>
+        <Class IRI="#sGraph"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#vois:lastUpdated"/>
+        <Class IRI="#sGraph"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#vois:streamLocation"/>
+        <Class IRI="#sGraph"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
         <Class IRI="#sGraph"/>
     </DataPropertyDomain>
     <DataPropertyRange>
@@ -798,6 +888,14 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#tboxLocation"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#vois:lastUpdated"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#vois:streamLocation"/>
         <Datatype abbreviatedIRI="xsd:anyURI"/>
     </DataPropertyRange>
     <AnnotationAssertion>
@@ -1087,6 +1185,11 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CountingPolicy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">vois:CountingPolicy represent sliding policy for vois:PhysicalWindow or vois:TemporalWindow.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DataStream</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A countably infinite set of RDF triples that are published, maintained or aggregated by a single provider.</Literal>
     </AnnotationAssertion>
@@ -1118,12 +1221,17 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SemanticWindow</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Window that start when vois:startingEvent ocurres and stop when vois:endingEvent occures</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Window that start when vois:start ocurres and stop when vois:ends occurs</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#SemanticWindow</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Semantic Window</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SessionPolicy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">vois:SessionPolicy represent sliding policy for vois:SemanticWindow, capture the starting and ending events of a session.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1167,13 +1275,23 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#endingEvent</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Point to an vois:Event that will end and opened vois:Window</Literal>
+        <IRI>#affluents</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A set of vois:dGraph, describing affluents vois:DataStream, used to construct a swollen vois:DataStream</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#endingEvent</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ending event</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#dGraph</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">vois:dGraph is a named graph holding static or slowly changing information describing the vois:DataStream</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#describedBy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Each vois:iGraph point to the vois:dGraph describing it</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ends</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Point to ending point of a vois:Window. can be a time instance or event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1189,6 +1307,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#hasWindow</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has window</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#iGraph</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">vois:iGraph is a RDF named graph representing instantaneous element of the vois:DataStream</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1237,13 +1360,8 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#startingEvent</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Point to an vois:Event that will start and opened vois:Window</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#startingEvent</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">starting event</Literal>
+        <IRI>#start</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Point to starting point of a vois:Window. can be a time instance or event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1301,6 +1419,16 @@
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">window partition</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#vois:describes</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">vois:dGraph point to the vois:iGraphs generated by same vois:DataStream</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#vois:streamLocation</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WebSocket URI, where the stream can be consumed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="foaf:homepage"/>
         <AbbreviatedIRI>void:LiDRC</AbbreviatedIRI>
         <IRI>http://linkeddata.deri.ie/</IRI>
@@ -1350,6 +1478,16 @@
         <AbbreviatedIRI>void:ttl</AbbreviatedIRI>
         <IRI>http://purl.org/adms/status/Completed</IRI>
     </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>owl:topDataProperty</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The websocket URI to consume the stream</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>sd:NamedGraph</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An instance of sd:NamedGraph represents a named graph having a name (via sd:name) and an optional graph description (via sd:graph).</Literal>
+    </AnnotationAssertion>
     <AnnotationPropertyDomain>
         <AnnotationProperty IRI="http://rdfs.org/ns/void#rootResource"/>
         <IRI>http://rdfs.org/ns/void#Dataset</IRI>
@@ -1382,5 +1520,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 
