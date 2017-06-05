@@ -246,11 +246,13 @@
 <rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_aff_datastream_123">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 	<rdf:type rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+	<prov:wasGeneratedBy rdf:resource="http://ex.org/swollen#mobile_wave_annotation"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_aff_datastream_456">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 	<rdf:type rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+	<prov:wasGeneratedBy rdf:resource="http://ex.org/swollen#mobile_wave_annotation"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_datastream">
@@ -362,6 +364,18 @@
 	<prov:wasAssociatedWith rdf:resource="http://ex.org/swollen#ex_triple_wave"/>
 </rdf:Description>
 
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_lib">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+	<foaf:name>MobileWave Plugin</foaf:name>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_annotation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#Transform"/>
+	<prov:wasAssociatedWith rdf:resource="http://ex.org/swollen#mobile_wave_lib"/>
+</rdf:Description>
+
 <rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_window_1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 	<rdf:type rdf:resource="http://streamreasoning.org/vois#TimeBasedWindow"/>
@@ -396,13 +410,13 @@
 	<vois:range rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</vois:range>
 </rdf:Description>
 
-<rdf:Description rdf:nodeID="node1bhrr92oax1">
+<rdf:Description rdf:nodeID="node1bhrs068fx1">
 	<rdf:type rdf:resource="http://www.w3.org/2006/time#instant"/>
 	<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:34:00.000</time:inXSDDateTime>
 </rdf:Description>
 
 <rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_window_3">
-	<vois:starts rdf:nodeID="node1bhrr92oax1"/>
+	<vois:starts rdf:nodeID="node1bhrs068fx1"/>
 	<vois:unit rdf:resource="http://www.w3.org/2006/time#unitMinute"/>
 </rdf:Description>
 
