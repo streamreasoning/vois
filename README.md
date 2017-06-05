@@ -1,15 +1,29 @@
 # vois
 Vocabulary for Interlinked Streams
 
-# Competency Questions:	
-* What is the sGraph of this data stream?
-* What are the parts of this data stream?
-* What is the timestamp of this iGraph?
-* By which affluent was this iGraph streamed?
-* What are the capabilities of sensors streaming this iGraph?
+# Research Questions
+* What does describe a data stream?
+* What are the parts that constitute a data stream?
 * What is the process for publishing this datastream ?
+---
+# Generic Competency Questions:
+* What is this stream about ? 
+* Where is this stream available ? 
+* When is this stream avaialbe ?
+* What/who is producing the stream ?
+* What/who can consume the stream ?
+* How is the stream produced ? 
+---
+# Solution Questions
+## Static and dynamic part 
+* What does describbe static part of a stream ?
+** What is the sGraph of this data stream? **
+* What does describbe dynamic part of a stream ?
+** What is the iGraph of this data stream? **
+* What are the capabilities of sensors streaming this iGraph?
 * What parts of this data stream is visible?
-* What is the sliding policy of this data stream?
+* What is the specification of this data stream?
+* By which affluent was this iGraph streamed?
 ---
 # VoIS Core 
 VoIS Core module is an extension VoID ontology, introducing basic concepts to annotate RDF data streams with meta-data needed to enable answering queries about the streams.
