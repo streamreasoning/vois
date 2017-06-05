@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://streamreasoning.org/vois-prov#"
+     xml:base="http://streamreasoning.org/vois-prov"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:adms="http://www.w3.org/ns/adms#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sd="http://www.w3.org/ns/sparql-service-description#"
+     xmlns:vois="http://streamreasoning.org/vois#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://streamreasoning.org/vois-prov">
+        <owl:versionIRI rdf:resource="http://streamreasoning.org/vois-prov/1.0.0"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/prov-o-20130430"/>
+        <owl:imports rdf:resource="http://streamreasoning.org/vois"/>
+        <dc:creator rdf:resource="http://streamreasoning.org/vois#EmanueleDellaValle"/>
+        <vann:preferredNamespaceUri>http://streamreasoning.org/vois-prov#</vann:preferredNamespaceUri>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-23T13:00:00</dcterms:created>
+        <dc:creator rdf:resource="http://streamreasoning.org/vois#RiccardoTommasini"/>
+        <vann:preferredNamespacePrefix>voisp</vann:preferredNamespacePrefix>
+        <dc:creator rdf:resource="http://streamreasoning.org/vois#YehiaAboSedira"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#query -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-prov#query">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#RSPQLTransformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://streamreasoning.org/vois#DataStream -->
+
+    <rdf:Description rdf:about="http://streamreasoning.org/vois#DataStream">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#RDFStreamProcessor -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#RDFStreamProcessor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#RSPQLTransformation -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#RSPQLTransformation">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#Transform"/>
+        <owl:disjointWith rdf:resource="http://streamreasoning.org/vois-prov#SetTransformation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#Replay -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#Replay">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#SetTransformation -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#SetTransformation">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#Transform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#Transform -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#Transform">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#UnionTransformation -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#UnionTransformation">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#SetTransformation"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#TripleWave -->
+
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois-prov#TripleWave">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
