@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns="http://ex.org/swollen#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:wot="http://xmlns.com/wot/0.1/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:adms="http://www.w3.org/ns/adms#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:prov="http://www.w3.org/ns/prov#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:time="http://www.w3.org/2006/time#"
+	xmlns:vann="http://purl.org/vocab/vann/"
+	xmlns:void="http://rdfs.org/ns/void#"
+	xmlns:vois="http://streamreasoning.org/vois#"
+	xmlns:terms="http://purl.org/dc/terms/">
+
+<rdf:Description rdf:about="http://ex.org/swollen/">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/description">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/license">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/title">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://rdfs.org/ns/void#dataDump">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#affluents">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#describedBy">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#ends">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#hasActiveWindow">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#hasWindow">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#inWindowedStream">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#lastUpdated">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#policy">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#range">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#sGraph">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#starts">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#step">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#streamFormat">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#streamLocation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#tboxLocation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#unit">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/2006/time#inXSDDateTime">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#actedOnBehalfOf">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#used">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/homepage">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#CountingPolicy">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#DataStream">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#DescriptionGraph">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#InstantaneousGraph">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#PhysicalWindow">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#StreamGraph">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#TimeBasedWindow">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#UnionTransformation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://streamreasoning.org/vois#WindowedStream">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/2006/time#instant">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#SoftwareAgent">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#ex_org">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+	<rdfs:label xml:lang="en">exOrg</rdfs:label>
+	<foaf:homepage>http://www.ex.org/</foaf:homepage>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#ex_triple_wave">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+	<prov:actedOnBehalfOf rdf:resource="http://ex.org/swollen#ex_org"/>
+	<foaf:name>TripleWave Instance</foaf:name>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#instant_2017_06_05_00_37">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/2006/time#instant"/>
+	<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:37:00.000</time:inXSDDateTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#instant_2017_06_05_00_38">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/2006/time#instant"/>
+	<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:38:00.000</time:inXSDDateTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#instant_2017_06_05_00_39">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/2006/time#instant"/>
+	<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:39:00.000</time:inXSDDateTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#instant_2017_06_05_00_40">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/2006/time#instant"/>
+	<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:40:00.000</time:inXSDDateTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#instant_2017_06_05_00_41">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/2006/time#instant"/>
+	<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:41:00.000</time:inXSDDateTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#instant_2017_06_05_00_42">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/2006/time#instant"/>
+	<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:42:37.774</time:inXSDDateTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_aff_datastream_123">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_aff_datastream_456">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_datastream">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#WindowedStream"/>
+	<dc:creator rdf:resource="http://ex.org/swollen#ex_org"/>
+	<terms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mobile wave swollen stream</terms:description>
+	<terms:license rdf:resource="https://creativecommons.org/licenses/by-nc/4.0/"/>
+	<terms:publisher rdf:resource="http://ex.org/swollen#ex_org"/>
+	<terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mobilewave</terms:title>
+	<vois:hasActiveWindow rdf:resource="http://ex.org/swollen#mobile_wave_window_1"/>
+	<vois:hasActiveWindow rdf:resource="http://ex.org/swollen#mobile_wave_window_2"/>
+	<vois:hasWindow rdf:resource="http://ex.org/swollen#mobile_wave_window_3"/>
+	<vois:hasWindow rdf:resource="http://ex.org/swollen#mobile_wave_window_4"/>
+	<vois:sGraph rdf:resource="http://ex.org/swollen#mobile_wave_sgraph"/>
+	<vois:streamFormat rdf:resource="http://rdfs.org/ns/void#ttl"/>
+	<prov:wasAttributedTo rdf:resource="http://ex.org/swollen#ex_triple_wave"/>
+	<prov:wasGeneratedBy rdf:resource="http://ex.org/swollen#mobile_wave_transformation"/>
+	<foaf:homepage rdf:resource="http://www.ex.org/mobilewave"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_dgraph_123">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#DescriptionGraph"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_dgraph_456">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#DescriptionGraph"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_igraph_123_1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
+	<vois:describedBy rdf:resource="http://ex.org/swollen#mobile_wave_dgraph_123"/>
+	<vois:sGraph rdf:resource="http://ex.org/swollen#mobile_wave_sgraph"/>
+	<prov:generatedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:42:00.000</prov:generatedAtTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_igraph_123_2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
+	<vois:describedBy rdf:resource="http://ex.org/swollen#mobile_wave_dgraph_123"/>
+	<vois:sGraph rdf:resource="http://ex.org/swollen#mobile_wave_sgraph"/>
+	<prov:generatedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:40:00.000</prov:generatedAtTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_igraph_123_3">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
+	<vois:describedBy rdf:resource="http://ex.org/swollen#mobile_wave_dgraph_123"/>
+	<vois:sGraph rdf:resource="http://ex.org/swollen#mobile_wave_sgraph"/>
+	<prov:generatedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:38:00.000</prov:generatedAtTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_igraph_456_1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
+	<vois:describedBy rdf:resource="http://ex.org/swollen#mobile_wave_dgraph_456"/>
+	<vois:sGraph rdf:resource="http://ex.org/swollen#mobile_wave_sgraph"/>
+	<prov:generatedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:37:00.000</prov:generatedAtTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_igraph_456_2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
+	<vois:describedBy rdf:resource="http://ex.org/swollen#mobile_wave_dgraph_456"/>
+	<vois:sGraph rdf:resource="http://ex.org/swollen#mobile_wave_sgraph"/>
+	<prov:generatedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:39:00.000</prov:generatedAtTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_igraph_456_3">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
+	<vois:describedBy rdf:resource="http://ex.org/swollen#mobile_wave_dgraph_456"/>
+	<vois:sGraph rdf:resource="http://ex.org/swollen#mobile_wave_sgraph"/>
+	<prov:generatedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:41:00.000</prov:generatedAtTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_policy_1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#CountingPolicy"/>
+	<vois:step rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</vois:step>
+	<vois:unit rdf:resource="http://www.w3.org/2006/time#unitMinute"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_policy_2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#CountingPolicy"/>
+	<vois:step rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">4</vois:step>
+	<vois:unit rdf:resource="http://www.w3.org/2006/time#unitGraph"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_sgraph">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
+	<vois:affluents rdf:resource="http://ex.org/swollen#mobile_wave_dgraph_123"/>
+	<vois:affluents rdf:resource="http://ex.org/swollen#mobile_wave_dgraph_456"/>
+	<vois:lastUpdated rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:42:37.774</vois:lastUpdated>
+	<vois:streamLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">ws://localhost:4040/mobilewave</vois:streamLocation>
+	<vois:tboxLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ex.org/mobilewave.owl</vois:tboxLocation>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_transformation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#UnionTransformation"/>
+	<prov:used rdf:resource="http://ex.org/swollen#mobile_wave_aff_datastream_123"/>
+	<prov:used rdf:resource="http://ex.org/swollen#mobile_wave_aff_datastream_456"/>
+	<prov:wasAssociatedWith rdf:resource="http://ex.org/swollen#ex_triple_wave"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_window_1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#TimeBasedWindow"/>
+	<void:dataDump>http://ex.org/mobile_wave_window_1.rdf</void:dataDump>
+	<vois:ends rdf:resource="http://ex.org/swollen#instant_2017_06_05_00_42"/>
+	<vois:inWindowedStream rdf:resource="http://ex.org/swollen#mobile_wave_datastream"/>
+	<vois:policy rdf:resource="http://ex.org/swollen#mobile_wave_policy_1"/>
+	<vois:range rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">4</vois:range>
+	<vois:starts rdf:resource="http://ex.org/swollen#instant_2017_06_05_00_38"/>
+	<vois:unit rdf:resource="http://www.w3.org/2006/time#unitMinute"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_window_2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#PhysicalWindow"/>
+	<void:dataDump>http://ex.org/mobile_wave_window_2.rdf</void:dataDump>
+	<vois:ends rdf:resource="http://ex.org/swollen#instant_2017_06_05_00_42"/>
+	<vois:inWindowedStream rdf:resource="http://ex.org/swollen#mobile_wave_datastream"/>
+	<vois:policy rdf:resource="http://ex.org/swollen#mobile_wave_policy_2"/>
+	<vois:range rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</vois:range>
+	<vois:starts rdf:resource="http://ex.org/swollen#instant_2017_06_05_00_41"/>
+	<vois:unit rdf:resource="http://ex.org/swollen#unitGraph"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_window_3">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#TimeBasedWindow"/>
+	<void:dataDump>http://ex.org/mobile_wave_window_3.rdf</void:dataDump>
+	<vois:ends rdf:resource="http://ex.org/swollen#instant_2017_06_05_00_38"/>
+	<vois:inWindowedStream rdf:resource="http://ex.org/swollen#mobile_wave_datastream"/>
+	<vois:policy rdf:resource="http://ex.org/swollen#mobile_wave_policy_1"/>
+	<vois:range rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</vois:range>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1bhrr92oax1">
+	<rdf:type rdf:resource="http://www.w3.org/2006/time#instant"/>
+	<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:34:00.000</time:inXSDDateTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_window_3">
+	<vois:starts rdf:nodeID="node1bhrr92oax1"/>
+	<vois:unit rdf:resource="http://www.w3.org/2006/time#unitMinute"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#mobile_wave_window_4">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://streamreasoning.org/vois#PhysicalWindow"/>
+	<void:dataDump>http://ex.org/mobile_wave_window_4.rdf</void:dataDump>
+	<vois:ends rdf:resource="http://ex.org/swollen#instant_2017_06_05_00_40"/>
+	<vois:inWindowedStream rdf:resource="http://ex.org/swollen#mobile_wave_datastream"/>
+	<vois:policy rdf:resource="http://ex.org/swollen#mobile_wave_policy_2"/>
+	<vois:range rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</vois:range>
+	<vois:starts rdf:resource="http://ex.org/swollen#instant_2017_06_05_00_39"/>
+	<vois:unit rdf:resource="http://ex.org/swollen#unitGraph"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/swollen#unitGraph">
+	<rdfs:label>RDF Graph</rdfs:label>
+</rdf:Description>
+
+</rdf:RDF>

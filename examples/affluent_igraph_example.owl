@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns="http://ex.org/afflent#"
+	xmlns:mw="http://www.semanticweb.org/mobile-wave#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+<rdf:Description rdf:about="http://ex.org/afflent#">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#featureOfInterest">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#isProducedBy">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#observationResult">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#observedBy">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#GPSSensorOutput">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#hasQuantityValue">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#Altitude">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#GPSObservation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#GPSSensorOutput">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#Heading">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#Latitude">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#Longitude">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#Speed">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#Altitude_123_TS_2017_06_05_00_38">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/mobile-wave#Altitude"/>
+	<mw:GPSSensorOutput rdf:resource="http://ex.org/afflent#GPSSensorOutput_123_TS_2017_06_05_00_38"/>
+	<mw:hasQuantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">85.97453498245306</mw:hasQuantityValue>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#GPSObservation_123_TS_2017_06_05_00_38">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/mobile-wave#GPSObservation"/>
+	<ssn:featureOfInterest rdf:resource="http://ex.org/afflent#SmartPhone_123"/>
+	<ssn:observationResult rdf:resource="http://ex.org/afflent#GPSSensorOutput_123"/>
+	<ssn:observedBy rdf:resource="http://ex.org/afflent#GPSSensor_123"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#GPSSensorOutput_123_TS_2017_06_05_00_38">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/mobile-wave#GPSSensorOutput"/>
+	<ssn:isProducedBy rdf:resource="http://ex.org/afflent#GPSSensor_"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#Heading_2017_06_05_00_38">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/mobile-wave#Heading"/>
+	<mw:GPSSensorOutput rdf:resource="http://ex.org/afflent#GPSSensorOutput_123_TS_2017_06_05_00_38"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#Latitude_2017_06_05_00_38">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/mobile-wave#Latitude"/>
+	<mw:GPSSensorOutput rdf:resource="http://ex.org/afflent#GPSSensorOutput_123_TS_2017_06_05_00_38"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#Longitude_2017_06_05_00_38">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/mobile-wave#Longitude"/>
+	<mw:GPSSensorOutput rdf:resource="http://ex.org/afflent#GPSSensorOutput_123_TS_2017_06_05_00_38"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#Speed_2017_06_05_00_38">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/mobile-wave#Speed"/>
+	<mw:GPSSensorOutput rdf:resource="http://ex.org/afflent#GPSSensorOutput_123_TS_2017_06_05_00_38"/>
+</rdf:Description>
+
+</rdf:RDF>
