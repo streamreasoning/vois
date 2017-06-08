@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://streamreasoning.org/voisw#"
-     xml:base="http://streamreasoning.org/voisw"
+<rdf:RDF xmlns="http://streamreasoning.org/vois-w#"
+     xml:base="http://streamreasoning.org/vois-w"
      xmlns:void="http://rdfs.org/ns/void#"
      xmlns:adms="http://www.w3.org/ns/adms#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:sd="http://www.w3.org/ns/sparql-service-description#"
      xmlns:vois="http://streamreasoning.org/vois#"
@@ -15,8 +16,8 @@
      xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://streamreasoning.org/voisw">
-        <owl:versionIRI rdf:resource="http://streamreasoning.org/voisw/1.0.00"/>
+    <owl:Ontology rdf:about="http://streamreasoning.org/vois-w">
+        <owl:versionIRI rdf:resource="http://streamreasoning.org/vois-w/1.0.0"/>
         <owl:imports rdf:resource="http://streamreasoning.org/vois/1.0.0"/>
         <vann:preferredNamespacePrefix>vois</vann:preferredNamespacePrefix>
         <dcterms:type rdf:resource="http://purl.org/adms/assettype/Ontology"/>
@@ -179,11 +180,11 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#streamFormat -->
+    <!-- http://streamreasoning.org/vois-w#streamFormat -->
 
-    <owl:AnnotationProperty rdf:about="http://streamreasoning.org/voisw#streamFormat">
+    <owl:AnnotationProperty rdf:about="http://streamreasoning.org/vois-w#streamFormat">
         <rdfs:comment>A digital resource format.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#DataStream"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#DataStream"/>
     </owl:AnnotationProperty>
     
 
@@ -393,89 +394,120 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#ends -->
+    <!-- http://streamreasoning.org/vois-w#ended -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/voisw#ends">
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#ended">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#SemanticWindow"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#SessionPolicy"/>
-        <rdfs:comment>:ends points to the ending events of a sematic window, or session policy</rdfs:comment>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#SemanticWindow"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#Event"/>
+        <rdfs:comment>:ended points to the ending events of semantic window</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/voisw#hasActiveWindow -->
+    <!-- http://streamreasoning.org/vois-w#ends -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/voisw#hasActiveWindow">
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/voisw#hasWindow"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#WindowedStream"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/voisw#Window"/>
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#ends">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#SessionPolicy"/>
+        <rdfs:comment>:ends points to the ending events of session policy</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-w#hasActiveWindow -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#hasActiveWindow">
+        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/vois-w#hasWindow"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#WindowedStream"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#Window"/>
         <rdfs:comment>List of vois:Window ,currently visible, of a vois:WindowedStream</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/voisw#hasWindow -->
+    <!-- http://streamreasoning.org/vois-w#hasWindow -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/voisw#hasWindow">
-        <owl:inverseOf rdf:resource="http://streamreasoning.org/voisw#inWindowedStream"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#WindowedStream"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/voisw#Window"/>
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#hasWindow">
+        <owl:inverseOf rdf:resource="http://streamreasoning.org/vois-w#inWindowedStream"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#WindowedStream"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#Window"/>
         <rdfs:comment>List of different vois:Window (visible or stored) composing vois:WindowedStream</rdfs:comment>
         <rdfs:label>has window</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/voisw#inWindowedStream -->
+    <!-- http://streamreasoning.org/vois-w#inWindowedStream -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/voisw#inWindowedStream">
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#inWindowedStream">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#Window"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/voisw#WindowedStream"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#WindowedStream"/>
         <rdfs:comment>Points to the vois:WindowedStream that a window is part of.</rdfs:comment>
         <rdfs:label>in stream</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/voisw#policy -->
+    <!-- http://streamreasoning.org/vois-w#policy -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/voisw#policy">
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#policy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#Window"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/voisw#Policy"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#Policy"/>
         <rdfs:comment>Points to the sliding vois:Policy of the vois:Window</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/voisw#starts -->
+    <!-- http://streamreasoning.org/vois-w#slidingUnit -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/voisw#starts">
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#slidingUnit">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#SemanticWindow"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#SessionPolicy"/>
-        <rdfs:comment>:starts points to the starting events of a sematic window, or session policy</rdfs:comment>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#CountingPolicy"/>
+        <rdfs:comment>Points to the temporal (e.g. minutes, hours) or physical (e.g. tuples, graphs) units defining  sliding step of the vois:Window.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/voisw#unit -->
+    <!-- http://streamreasoning.org/vois-w#started -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/voisw#unit">
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#CountingPolicy"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#Window"/>
-        <rdfs:comment>Point to the temporal (e.g. minutes, hours) or physical (e.g. tuples, graphs) units defining  range and/or step of the vois:Window.</rdfs:comment>
-        <rdfs:seeAlso rdf:resource="http://streamreasoning.org/voisw#range"/>
-        <rdfs:seeAlso rdf:resource="http://streamreasoning.org/voisw#step"/>
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#started">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#SemanticWindow"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#Event"/>
+        <rdfs:comment>:started points to the starting events of a semantic window</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/voisw#wasActiveAt -->
+    <!-- http://streamreasoning.org/vois-w#starts -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/voisw#wasActiveAt">
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#starts">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#SessionPolicy"/>
+        <rdfs:comment>:starts points to the starting events of a session policy</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-w#unit -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#unit">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:comment>Points to the temporal (e.g. minutes, hours) or physical (e.g. tuples, graphs) units defining  range and/or step of the vois:Window.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://streamreasoning.org/vois-w#range"/>
+        <rdfs:seeAlso rdf:resource="http://streamreasoning.org/vois-w#step"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-w#wasActiveAt -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#wasActiveAt">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
         <rdfs:comment>vois:wasActiveAt refer to the duration a window was active at</rdfs:comment>
         <rdfs:label>was active durring</rdfs:label>
     </owl:ObjectProperty>
@@ -581,20 +613,20 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#lastUpdated -->
+    <!-- http://streamreasoning.org/vois-w#lastUpdated -->
 
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/voisw#lastUpdated">
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#lastUpdated">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://streamreasoning.org/voisw#range -->
+    <!-- http://streamreasoning.org/vois-w#range -->
 
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/voisw#range">
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#range">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#Window"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#Window"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment>size value that specifies how many units is contained in the window</rdfs:comment>
         <rdfs:isDefinedBy>https://people.csail.mit.edu/tatbul/publications/maxstream_vldb10.pdf</rdfs:isDefinedBy>
@@ -603,20 +635,20 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#sourceLocation -->
+    <!-- http://streamreasoning.org/vois-w#sourceLocation -->
 
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/voisw#sourceLocation">
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#sourceLocation">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>URI pointing to the source location</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://streamreasoning.org/voisw#step -->
+    <!-- http://streamreasoning.org/vois-w#step -->
 
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/voisw#step">
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#step">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/voisw#CountingPolicy"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#CountingPolicy"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment>slide value that specifies how many units separate the start of different consecutive windows</rdfs:comment>
         <rdfs:isDefinedBy>https://people.csail.mit.edu/tatbul/publications/maxstream_vldb10.pdf</rdfs:isDefinedBy>
@@ -625,9 +657,9 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#streamLocation -->
+    <!-- http://streamreasoning.org/vois-w#streamLocation -->
 
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/voisw#streamLocation">
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#streamLocation">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>WebSocket URI, where the stream can be consumed</rdfs:comment>
@@ -635,9 +667,9 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#tboxLocation -->
+    <!-- http://streamreasoning.org/vois-w#tboxLocation -->
 
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/voisw#tboxLocation">
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#tboxLocation">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>URI pointing to the location of the tbox of the stream</rdfs:comment>
@@ -717,43 +749,27 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#CountingPolicy -->
+    <!-- http://streamreasoning.org/vois-w#CountingPolicy -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#CountingPolicy">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/voisw#Policy"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#CountingPolicy">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-w#Policy"/>
         <rdfs:comment>vois:CountingPolicy is used with vois:PhysicalWindow or vois:TimeBasedWindow, it has two property step and unit defining the difference between two consecutive windows.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/voisw#Event -->
+    <!-- http://streamreasoning.org/vois-w#Event -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#Event">
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#Event">
         <rdfs:comment>A event that start/end a vois:Window</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/voisw#Mappings -->
+    <!-- http://streamreasoning.org/vois-w#PhysicalWindow -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#Mappings">
-        <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#TechnicalFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/voisw#Origin -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#Origin">
-        <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#TechnicalFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/voisw#PhysicalWindow -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#PhysicalWindow">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/voisw#Window"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#PhysicalWindow">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-w#Window"/>
         <rdfs:comment>Window defined by an interval size (in units of RDF elements)</rdfs:comment>
         <rdfs:isDefinedBy>https://people.csail.mit.edu/tatbul/publications/maxstream_vldb10.pdf</rdfs:isDefinedBy>
         <rdfs:label>Physical Window</rdfs:label>
@@ -761,18 +777,19 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#Policy -->
+    <!-- http://streamreasoning.org/vois-w#Policy -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#Policy">
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#Policy">
+        <owl:disjointWith rdf:resource="http://streamreasoning.org/vois-w#Window"/>
         <rdfs:comment>vois:Policy describes the criteria used to define a window.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/voisw#SemanticWindow -->
+    <!-- http://streamreasoning.org/vois-w#SemanticWindow -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#SemanticWindow">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/voisw#Window"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#SemanticWindow">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-w#Window"/>
         <rdfs:comment>Window that capture some period of activity over a subset of the data, in this case per key. Typically they are defined by a timeout gap.</rdfs:comment>
         <rdfs:isDefinedBy>http://dl.acm.org/citation.cfm?id=2824076</rdfs:isDefinedBy>
         <rdfs:label>Semantic Window</rdfs:label>
@@ -780,19 +797,19 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#SessionPolicy -->
+    <!-- http://streamreasoning.org/vois-w#SessionPolicy -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#SessionPolicy">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/voisw#Policy"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#SessionPolicy">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-w#Policy"/>
         <rdfs:comment>vois:SessionPolicy ise used with semantic window. it define the starting and ending events of a window.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/voisw#TimeBasedWindow -->
+    <!-- http://streamreasoning.org/vois-w#TimeBasedWindow -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#TimeBasedWindow">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/voisw#Window"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#TimeBasedWindow">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-w#Window"/>
         <rdfs:comment>Window defined by an interval size (in units of time)</rdfs:comment>
         <rdfs:isDefinedBy>https://people.csail.mit.edu/tatbul/publications/maxstream_vldb10.pdf</rdfs:isDefinedBy>
         <rdfs:label>Time Based Window</rdfs:label>
@@ -800,9 +817,9 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#Window -->
+    <!-- http://streamreasoning.org/vois-w#Window -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#Window">
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#Window">
         <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#Dataset"/>
         <rdfs:comment>a set of RDF statements extracted from a stream</rdfs:comment>
         <rdfs:isDefinedBy>http://dblp.uni-trier.de/rec/journals/ijswis/DellAglioVCC14</rdfs:isDefinedBy>
@@ -811,9 +828,9 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#WindowedStream -->
+    <!-- http://streamreasoning.org/vois-w#WindowedStream -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/voisw#WindowedStream">
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#WindowedStream">
         <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#DataStream"/>
         <rdfs:comment>A countably infinte set of vois:Window that combined together compose a vois:DataStream .</rdfs:comment>
         <rdfs:label>windowed stream</rdfs:label>
@@ -870,33 +887,33 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- http://streamreasoning.org/voisw#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano -->
+    <!-- http://streamreasoning.org/vois-w#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano -->
 
-    <owl:NamedIndividual rdf:about="http://streamreasoning.org/voisw#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano">
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois-w#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano">
         <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://streamreasoning.org/voisw#EmanueleDellaValle -->
+    <!-- http://streamreasoning.org/vois-w#EmanueleDellaValle -->
 
-    <owl:NamedIndividual rdf:about="http://streamreasoning.org/voisw#EmanueleDellaValle">
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois-w#EmanueleDellaValle">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://streamreasoning.org/voisw#RiccardoTommasini -->
+    <!-- http://streamreasoning.org/vois-w#RiccardoTommasini -->
 
-    <owl:NamedIndividual rdf:about="http://streamreasoning.org/voisw#RiccardoTommasini">
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois-w#RiccardoTommasini">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://streamreasoning.org/voisw#YehiaAboSedira -->
+    <!-- http://streamreasoning.org/vois-w#YehiaAboSedira -->
 
-    <owl:NamedIndividual rdf:about="http://streamreasoning.org/voisw#YehiaAboSedira">
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois-w#YehiaAboSedira">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
@@ -948,17 +965,7 @@ Each window is associated with a defined policy describing the sliding criteria 
     
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
 
-    <rdf:Description rdf:about="http://streamreasoning.org/vois#start">
-        <rdfs:comment>Point to starting point of a vois:Window. can be a time instance or event</rdfs:comment>
-    </rdf:Description>
 </rdf:RDF>
 
 
