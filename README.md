@@ -17,9 +17,9 @@ Vocabulary for Interlinked Streams
 # Solution Questions
 ## Static and dynamic part 
 * What does describbe static part of a stream ?
-** What is the sGraph of this data stream? **
+  * What is the sGraph of this data stream?
 * What does describbe dynamic part of a stream ?
-** What is the iGraph of this data stream? **
+  * What is the iGraph of this data stream?
 * What are the capabilities of sensors streaming this iGraph?
 * What parts of this data stream is visible?
 * What is the specification of this data stream?
