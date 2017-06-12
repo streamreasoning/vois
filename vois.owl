@@ -1,871 +1,929 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF
-	xmlns="http://streamreasoning.org/vois#"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:sd="http://www.w3.org/ns/sparql-service-description#"
-	xmlns:owl="http://www.w3.org/2002/07/owl#"
-	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-	xmlns:adms="http://www.w3.org/ns/adms#"
-	xmlns:foaf="http://xmlns.com/foaf/0.1/"
-	xmlns:prov="http://www.w3.org/ns/prov-o#"
-	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-	xmlns:time="http://www.w3.org/2006/time#"
-	xmlns:vann="http://purl.org/vocab/vann/"
-	xmlns:void="http://rdfs.org/ns/void#"
-	xmlns:dcterms="http://purl.org/dc/terms/">
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-	<owl:versionIRI rdf:resource="http://streamreasoning.org/vois/1.0.0"/>
-	<owl:imports rdf:resource="http://www.w3.org/ns/prov-o#"/>
-	<owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
-	<vann:preferredNamespacePrefix>vois</vann:preferredNamespacePrefix>
-	<dcterms:type rdf:resource="http://purl.org/adms/assettype/Ontology"/>
-	<dcterms:partOf rdf:resource="http://streamreasoning.org/ontologies"/>
-	<dcterms:description>VoIS Core module is an extension VoID ontology, introducing basic concepts to annotate RDF data streams with meta-data needed to enable RDF Stream Processor to answer queries about the streams.
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://streamreasoning.org/vois#"
+     xml:base="http://streamreasoning.org/vois"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:adms="http://www.w3.org/ns/adms#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sd="http://www.w3.org/ns/sparql-service-description#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:prov1="http://www.w3.org/ns/prov#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:prov="http://www.w3.org/ns/prov-o#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://streamreasoning.org/vois">
+        <owl:versionIRI rdf:resource="http://streamreasoning.org/vois/1.0.0"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
+        <vann:preferredNamespacePrefix>vois</vann:preferredNamespacePrefix>
+        <dcterms:type rdf:resource="http://purl.org/adms/assettype/Ontology"/>
+        <dcterms:partOf rdf:resource="http://streamreasoning.org/ontologies"/>
+        <dcterms:description>VoIS Core module is an extension VoID ontology, introducing basic concepts to annotate RDF data streams with meta-data needed to enable RDF Stream Processor to answer queries about the streams.
 VoIS express general meta-data based on Dublin Core, access meta-data and structural meta-data  based on VoID.
 Four classes are introduced, One main class vois:DataStream represents a sequence of RDF statement with a temporal annotation.
 An RDF Stream is represented with 2 named graphs iGraph and sGraph, where an iGraph represents one stream element, while the sGraph contains the descriptions of the iGraphs. [TripleWave: Spreading RDF Streams on the Web] 
 dGraph is a named graph suggested to catch the static information about the stream source, in case the stream is constructed by a combination, possibly conditioned, of multiple streams</dcterms:description>
-	<dc:creator rdf:resource="http://streamreasoning.org/vois#EmanueleDellaValle"/>
-	<dc:contributor rdf:resource="http://streamreasoning.org/vois#YehiaAboSedira"/>
-	<dcterms:status rdf:resource="http://purl.org/adms/status/UnderDevelopment"/>
-	<dcterms:title>Vocabulary of Interlinked Stream (VoIS)</dcterms:title>
-	<dcterms:description>The Vocabulary of Interlinked Stream (VoIS) is an RDF Schema vocabulary for expressing metadata about RDF Streams. It is intended as a bridge between the publishers and users of RDF stream data, with applications ranging from data discovery to cataloging and archiving of datastream. It resuses extising concepts from VoID, TimeLine Ontology, PROV-O. This document provides a formal definition of the new RDF classes and properties introduced for VoIS.</dcterms:description>
-	<dcterms:publisher rdf:resource="http://streamreasoning.org/vois#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano"/>
-	<dcterms:created>2017-03-14</dcterms:created>
-	<foaf:homepage rdf:resource="http://streamreasoning.org/vois#"/>
-	<dc:creator rdf:resource="http://streamreasoning.org/vois#RiccardoTommasini"/>
-	<dcterms:modified>2017-04-20</dcterms:modified>
-	<vann:preferredNamespaceUri>http://streamreasoning.org/vois#</vann:preferredNamespaceUri>
-</rdf:Description>
-<!--  -->
-<!--  -->
-<!-- ################################################################# -->
-<!-- # -->
-<!-- #    Annotation properties -->
-<!-- # -->
-<!-- ################################################################# -->
-<!--  -->
-<!--  -->
-<!-- http://purl.org/dc/elements/1.1/contributor -->
-
-<rdf:Description rdf:about="http://purl.org/dc/elements/1.1/contributor">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/dc/elements/1.1/creator -->
-
-<rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/dc/terms/FileFormat -->
-
-<rdf:Description rdf:about="http://purl.org/dc/terms/FileFormat">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/dc/terms/created -->
-
-<rdf:Description rdf:about="http://purl.org/dc/terms/created">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/dc/terms/description -->
-
-<rdf:Description rdf:about="http://purl.org/dc/terms/description">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/dc/terms/modified -->
-
-<rdf:Description rdf:about="http://purl.org/dc/terms/modified">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/dc/terms/partOf -->
-
-<rdf:Description rdf:about="http://purl.org/dc/terms/partOf">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/dc/terms/publisher -->
-
-<rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/dc/terms/status -->
-
-<rdf:Description rdf:about="http://purl.org/dc/terms/status">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/dc/terms/title -->
-
-<rdf:Description rdf:about="http://purl.org/dc/terms/title">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/dc/terms/type -->
-
-<rdf:Description rdf:about="http://purl.org/dc/terms/type">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
-
-<rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
-
-<rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#rootResource -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#rootResource">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-	<rdfs:comment>A top concept or entry point for a void:Dataset that is structured in a tree-like fashion. All resources in a dataset can be reached by following links from its root resources in a small number of steps.</rdfs:comment>
-	<rdfs:label>root resource</rdfs:label>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#sparqlEndpoint -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#sparqlEndpoint">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-	<rdfs:label>has a SPARQL endpoint at</rdfs:label>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#uriLookupEndpoint -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#uriLookupEndpoint">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-	<rdfs:comment>Defines a simple URI look-up protocol for accessing a dataset.</rdfs:comment>
-	<rdfs:label>has an URI look-up endpoint at</rdfs:label>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#uriRegexPattern -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#uriRegexPattern">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-	<rdfs:comment>Defines a regular expression pattern matching URIs in the dataset.</rdfs:comment>
-	<rdfs:label>has URI regular expression pattern</rdfs:label>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#vocabulary -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#vocabulary">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-	<rdfs:comment>A vocabulary that is used in the dataset.</rdfs:comment>
-	<rdfs:label>vocabulary</rdfs:label>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#streamFormat -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#streamFormat">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-	<rdfs:comment>A digital resource format.</rdfs:comment>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
-</rdf:Description>
-<!--  -->
-<!-- http://www.w3.org/ns/adms#accessURL -->
-
-<rdf:Description rdf:about="http://www.w3.org/ns/adms#accessURL">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://www.w3.org/ns/adms#status -->
-
-<rdf:Description rdf:about="http://www.w3.org/ns/adms#status">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://xmlns.com/foaf/0.1/homepage -->
-
-<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/homepage">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://xmlns.com/foaf/0.1/mbox -->
-
-<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/mbox">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://xmlns.com/foaf/0.1/member -->
-
-<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/member">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!-- http://xmlns.com/foaf/0.1/name -->
-
-<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-</rdf:Description>
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- ################################################################# -->
-<!-- # -->
-<!-- #    Object Properties -->
-<!-- # -->
-<!-- ################################################################# -->
-<!--  -->
-<!--  -->
-<!-- http://rdfs.org/ns/void#class -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#class">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-	<rdfs:comment>The rdfs:Class that is the rdf:type of all entities in a class-based partition.</rdfs:comment>
-	<rdfs:label>class</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#classPartition -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#classPartition">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://rdfs.org/ns/void#subset"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:comment>A subset of a void:Dataset that contains only the entities of a certain rdfs:Class.</rdfs:comment>
-	<rdfs:label>class partition</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#dataDump -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#dataDump">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-	<rdfs:comment>An RDF dump, partial or complete, of a void:Dataset.</rdfs:comment>
-	<rdfs:label>Data Dump</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#exampleResource -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#exampleResource">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-	<rdfs:label>example resource of dataset</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#feature -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#feature">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:label>feature</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#inDataset -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#inDataset">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
-	<rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:comment>Points to the void:Dataset that a document is a part of.</rdfs:comment>
-	<rdfs:label>in dataset</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#linkPredicate -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#linkPredicate">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Linkset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	<rdfs:label>a link predicate</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#objectsTarget -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#objectsTarget">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://rdfs.org/ns/void#target"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Linkset"/>
-	<rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:comment>The dataset describing the objects of the triples contained in the Linkset.</rdfs:comment>
-	<rdfs:label>Objects Target</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#openSearchDescription -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#openSearchDescription">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
-	<rdfs:comment>An OpenSearch description document for a free-text search service over a void:Dataset.</rdfs:comment>
-	<rdfs:label>open search description</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#property -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#property">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	<rdfs:comment>The rdf:Property that is the predicate of all triples in a property-based partition.</rdfs:comment>
-	<rdfs:label>property</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#propertyPartition -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#propertyPartition">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://rdfs.org/ns/void#subset"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:comment>A subset of a void:Dataset that contains only the triples of a certain rdf:Property.</rdfs:comment>
-	<rdfs:label>property partition</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#subjectsTarget -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#subjectsTarget">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://rdfs.org/ns/void#target"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Linkset"/>
-	<rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:comment>The dataset describing the subjects of triples contained in the Linkset.</rdfs:comment>
-	<rdfs:label>Subjects Target</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#subset -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#subset">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:label>has subset</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#target -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#target">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Linkset"/>
-	<rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:comment>One of the two datasets linked by the Linkset.</rdfs:comment>
-	<rdfs:label>Target</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#affluents -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#affluents">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
-	<rdfs:range rdf:resource="http://streamreasoning.org/vois#DescriptionGraph"/>
-	<rdfs:comment>A set of vois:dGraph, describing one or more vois:DataStream, used to construct a swollen vois:DataStream</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#composed -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#composed">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<owl:inverseOf rdf:resource="http://streamreasoning.org/vois#wasComposedFrom"/>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#Source"/>
-	<rdfs:range rdf:resource="http://streamreasoning.org/vois#Sink"/>
-	<rdfs:comment>A composition is a transformation of a source entity into a sink entity, e.g. Filtering, Annotating, Restructuring...</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#interval -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#interval">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-	<rdfs:comment>The time interval that contains all entities in a time-based partition.</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#refers -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#refers">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<owl:inverseOf rdf:resource="http://streamreasoning.org/vois#sGraph"/>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
-	<rdfs:range rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
-	<rdfs:comment>Points to a list of Instantaneous Graphs contained in the DataStream</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#sGraph -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#sGraph">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:range rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
-	<rdfs:comment>Point to the stream graph describing the DataStream.</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#sourceDescription -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#sourceDescription">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
-	<rdfs:range rdf:resource="http://streamreasoning.org/vois#DescriptionGraph"/>
-	<rdfs:comment>Each iGraph points to the dGraph describing the source generated it</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#temporalPartition -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#temporalPartition">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://rdfs.org/ns/void#subset"/>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
-	<rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:comment>A subset of a vois:DataStream that contains only stream elements that occured during a given interval</rdfs:comment>
-	<rdfs:label>temporal partition</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#wasComposedFrom -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#wasComposedFrom">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#Sink"/>
-	<rdfs:range rdf:resource="http://streamreasoning.org/vois#Source"/>
-	<rdfs:comment>A composition is a transformation of a source entity into a sink entity, e.g. Filtering, Annotating, Restructuring...</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- ################################################################# -->
-<!-- # -->
-<!-- #    Data properties -->
-<!-- # -->
-<!-- ################################################################# -->
-<!--  -->
-<!--  -->
-<!-- http://rdfs.org/ns/void#classes -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#classes">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-	<rdfs:comment>The total number of distinct classes in a void:Dataset. In other words, the number of distinct resources occuring as objects of rdf:type triples in the dataset.</rdfs:comment>
-	<rdfs:label>classes</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#distinctObjects -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#distinctObjects">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-	<rdfs:comment>The total number of distinct objects in a void:Dataset. In other words, the number of distinct resources that occur in the object position of triples in the dataset. Literals are included in this count.</rdfs:comment>
-	<rdfs:label>distinct objects</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#distinctSubjects -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#distinctSubjects">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-	<rdfs:comment>The total number of distinct subjects in a void:Dataset. In other words, the number of distinct resources that occur in the subject position of triples in the dataset.</rdfs:comment>
-	<rdfs:label>distinct subjects</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#documents -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#documents">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-	<rdfs:comment>The total number of documents, for datasets that are published as a set of individual documents, such as RDF/XML documents or RDFa-annotated web pages. Non-RDF documents, such as web pages in HTML or images, are usually not included in this count. This property is intended for datasets where the total number of triples or entities is hard to determine. void:triples or void:entities should be preferred where practical.</rdfs:comment>
-	<rdfs:label>number of documents</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#entities -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#entities">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-	<rdfs:comment>The total number of entities that are described in a void:Dataset.</rdfs:comment>
-	<rdfs:label>number of entities</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#properties -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#properties">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-	<rdfs:comment>The total number of distinct properties in a void:Dataset. In other words, the number of distinct resources that occur in the predicate position of triples in the dataset.</rdfs:comment>
-	<rdfs:label>number of properties</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#triples -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#triples">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-	<rdfs:comment>The total number of triples contained in a void:Dataset.</rdfs:comment>
-	<rdfs:label>number of triples</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#uriSpace -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#uriSpace">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-	<rdfs:comment>A URI that is a common string prefix of all the entity URIs in a void:Dataset.</rdfs:comment>
-	<rdfs:label>URI space</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#lastUpdated -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#lastUpdated">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-	<rdfs:comment>xsd:datetime value holding the timestamp of the last vois:iGraph</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#streamLocation -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#streamLocation">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-	<rdfs:comment>WebSocket URI, where the stream can be consumed</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#tboxLocation -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#tboxLocation">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-	<rdfs:domain rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-	<rdfs:comment>URI pointing to the location of the tbox of the stream</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://www.w3.org/2002/07/owl#topDataProperty -->
-
-<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
-	<rdfs:comment>The websocket URI to consume the stream</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- ################################################################# -->
-<!-- # -->
-<!-- #    Classes -->
-<!-- # -->
-<!-- ################################################################# -->
-<!--  -->
-<!--  -->
-<!-- http://purl.org/dc/terms/Agent -->
-
-<rdf:Description rdf:about="http://purl.org/dc/terms/Agent">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#Dataset -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#Dataset">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:comment>A set of RDF triples that are published, maintained or aggregated by a single provider.</rdfs:comment>
-	<rdfs:label>dataset</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#DatasetDescription -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#DatasetDescription">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
-	<rdfs:comment>A web resource whose foaf:primaryTopic or foaf:topics include void:Datasets.</rdfs:comment>
-	<rdfs:label>dataset description</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#Linkset -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#Linkset">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<rdfs:comment>A collection of RDF links between two void:Datasets.</rdfs:comment>
-	<rdfs:label>linkset</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://rdfs.org/ns/void#TechnicalFeature -->
-
-<rdf:Description rdf:about="http://rdfs.org/ns/void#TechnicalFeature">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#DataStream -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#DataStream">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:comment>sequences of RDF statement with a temporal annotation</rdfs:comment>
-	<rdfs:isDefinedBy>http://dblp.uni-trier.de/rec/html/journals/ijswis/DellAglioVCC14</rdfs:isDefinedBy>
-	<rdfs:label>stream</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#DescriptionGraph -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#DescriptionGraph">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sparql-service-description#NamedGraph"/>
-	<rdfs:comment>vois:dGraph is a named graph holding static or slowly changing information describing the vois:DataStream</rdfs:comment>
-	<rdfs:label>dGraph</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#InstantaneousGraph -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#InstantaneousGraph">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sparql-service-description#NamedGraph"/>
-	<rdfs:comment>vois:iGraph is a named graph, that represents one stream element</rdfs:comment>
-	<rdfs:isDefinedBy>https://link.springer.com/chapter/10.1007%2F978-3-319-46547-0_15</rdfs:isDefinedBy>
-	<rdfs:label>iGraph</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#Mappings -->
-
-<rdf:Description rdf:about="http://streamreasoning.org/vois#Mappings">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#TechnicalFeature"/>
-	<rdfs:comment>Information about mappings files used to generate the data stream.
+        <dc:creator rdf:resource="http://streamreasoning.org/vois#EmanueleDellaValle"/>
+        <dc:contributor rdf:resource="http://streamreasoning.org/vois#YehiaAboSedira"/>
+        <dcterms:status rdf:resource="http://purl.org/adms/status/UnderDevelopment"/>
+        <dcterms:title>Vocabulary of Interlinked Stream (VoIS)</dcterms:title>
+        <dcterms:description>The Vocabulary of Interlinked Stream (VoIS) is an RDF Schema vocabulary for expressing metadata about RDF Streams. It is intended as a bridge between the publishers and users of RDF stream data, with applications ranging from data discovery to cataloging and archiving of datastream. It resuses extising concepts from VoID, TimeLine Ontology, PROV-O. This document provides a formal definition of the new RDF classes and properties introduced for VoIS.</dcterms:description>
+        <dcterms:publisher rdf:resource="http://streamreasoning.org/vois#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano"/>
+        <dcterms:created>2017-03-14</dcterms:created>
+        <foaf:homepage rdf:resource="http://streamreasoning.org/vois#"/>
+        <dc:creator rdf:resource="http://streamreasoning.org/vois#RiccardoTommasini"/>
+        <dcterms:modified>2017-04-20</dcterms:modified>
+        <vann:preferredNamespaceUri>http://streamreasoning.org/vois#</vann:preferredNamespaceUri>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/FileFormat -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/FileFormat"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/partOf -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/partOf"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/status -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/status"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/type -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/type"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://rdfs.org/ns/void#rootResource -->
+
+    <owl:AnnotationProperty rdf:about="http://rdfs.org/ns/void#rootResource">
+        <rdfs:comment>A top concept or entry point for a void:Dataset that is structured in a tree-like fashion. All resources in a dataset can be reached by following links from its root resources in a small number of steps.</rdfs:comment>
+        <rdfs:label>root resource</rdfs:label>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#sparqlEndpoint -->
+
+    <owl:AnnotationProperty rdf:about="http://rdfs.org/ns/void#sparqlEndpoint">
+        <rdfs:label>has a SPARQL endpoint at</rdfs:label>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#uriLookupEndpoint -->
+
+    <owl:AnnotationProperty rdf:about="http://rdfs.org/ns/void#uriLookupEndpoint">
+        <rdfs:comment>Defines a simple URI look-up protocol for accessing a dataset.</rdfs:comment>
+        <rdfs:label>has an URI look-up endpoint at</rdfs:label>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#uriRegexPattern -->
+
+    <owl:AnnotationProperty rdf:about="http://rdfs.org/ns/void#uriRegexPattern">
+        <rdfs:comment>Defines a regular expression pattern matching URIs in the dataset.</rdfs:comment>
+        <rdfs:label>has URI regular expression pattern</rdfs:label>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#vocabulary -->
+
+    <owl:AnnotationProperty rdf:about="http://rdfs.org/ns/void#vocabulary">
+        <rdfs:comment>A vocabulary that is used in the dataset.</rdfs:comment>
+        <rdfs:label>vocabulary</rdfs:label>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#streamFormat -->
+
+    <owl:AnnotationProperty rdf:about="http://streamreasoning.org/vois#streamFormat">
+        <rdfs:comment>A digital resource format.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/adms#accessURL -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/adms#accessURL"/>
+    
+
+
+    <!-- http://www.w3.org/ns/adms#status -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/adms#status"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/mbox -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/mbox"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/member -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/member"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rdfs.org/ns/void#class -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#class">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:comment>The rdfs:Class that is the rdf:type of all entities in a class-based partition.</rdfs:comment>
+        <rdfs:label>class</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#classPartition -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#classPartition">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/ns/void#subset"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>A subset of a void:Dataset that contains only the entities of a certain rdfs:Class.</rdfs:comment>
+        <rdfs:label>class partition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#dataDump -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#dataDump">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment>An RDF dump, partial or complete, of a void:Dataset.</rdfs:comment>
+        <rdfs:label>Data Dump</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#exampleResource -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#exampleResource">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:label>example resource of dataset</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#feature -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#feature">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:label>feature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#inDataset -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#inDataset">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>Points to the void:Dataset that a document is a part of.</rdfs:comment>
+        <rdfs:label>in dataset</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#linkPredicate -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#linkPredicate">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Linkset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:label>a link predicate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#objectsTarget -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#objectsTarget">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/ns/void#target"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Linkset"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>The dataset describing the objects of the triples contained in the Linkset.</rdfs:comment>
+        <rdfs:label>Objects Target</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#openSearchDescription -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#openSearchDescription">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment>An OpenSearch description document for a free-text search service over a void:Dataset.</rdfs:comment>
+        <rdfs:label>open search description</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#property -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#property">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:comment>The rdf:Property that is the predicate of all triples in a property-based partition.</rdfs:comment>
+        <rdfs:label>property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#propertyPartition -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#propertyPartition">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/ns/void#subset"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>A subset of a void:Dataset that contains only the triples of a certain rdf:Property.</rdfs:comment>
+        <rdfs:label>property partition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#subjectsTarget -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#subjectsTarget">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/ns/void#target"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Linkset"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>The dataset describing the subjects of triples contained in the Linkset.</rdfs:comment>
+        <rdfs:label>Subjects Target</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#subset -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#subset">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:label>has subset</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#target -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#target">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Linkset"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>One of the two datasets linked by the Linkset.</rdfs:comment>
+        <rdfs:label>Target</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#affluents -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#affluents">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois#DescriptionGraph"/>
+        <rdfs:comment>A set of vois:dGraph, describing one or more vois:DataStream, used to construct a swollen vois:DataStream</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#composed -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#composed">
+        <owl:inverseOf rdf:resource="http://streamreasoning.org/vois#wasComposedFrom"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#Source"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois#Sink"/>
+        <rdfs:comment>A composition is a transformation of a source entity into a sink entity, e.g. Filtering, Annotating, Restructuring...</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#interval -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#interval">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment>The time interval that contains all entities in a time-based partition.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#refers -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#refers">
+        <owl:inverseOf rdf:resource="http://streamreasoning.org/vois#sGraph"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
+        <rdfs:comment>Points to a list of Instantaneous Graphs contained in the DataStream</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#sGraph -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#sGraph">
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
+        <rdfs:comment>Point to the stream graph describing the DataStream.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#sourceDescription -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#sourceDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois#DescriptionGraph"/>
+        <rdfs:comment>Each iGraph points to the dGraph describing the source generated it</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#temporalPartition -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#temporalPartition">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/ns/void#subset"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>A subset of a vois:DataStream that contains only stream elements that occured during a given interval</rdfs:comment>
+        <rdfs:label>temporal partition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#wasComposedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#wasComposedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#Sink"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois#Source"/>
+        <rdfs:comment>A composition is a transformation of a source entity into a sink entity, e.g. Filtering, Annotating, Restructuring...</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rdfs.org/ns/void#classes -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/ns/void#classes">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The total number of distinct classes in a void:Dataset. In other words, the number of distinct resources occuring as objects of rdf:type triples in the dataset.</rdfs:comment>
+        <rdfs:label>classes</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#distinctObjects -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/ns/void#distinctObjects">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The total number of distinct objects in a void:Dataset. In other words, the number of distinct resources that occur in the object position of triples in the dataset. Literals are included in this count.</rdfs:comment>
+        <rdfs:label>distinct objects</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#distinctSubjects -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/ns/void#distinctSubjects">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The total number of distinct subjects in a void:Dataset. In other words, the number of distinct resources that occur in the subject position of triples in the dataset.</rdfs:comment>
+        <rdfs:label>distinct subjects</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#documents -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/ns/void#documents">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The total number of documents, for datasets that are published as a set of individual documents, such as RDF/XML documents or RDFa-annotated web pages. Non-RDF documents, such as web pages in HTML or images, are usually not included in this count. This property is intended for datasets where the total number of triples or entities is hard to determine. void:triples or void:entities should be preferred where practical.</rdfs:comment>
+        <rdfs:label>number of documents</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#entities -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/ns/void#entities">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The total number of entities that are described in a void:Dataset.</rdfs:comment>
+        <rdfs:label>number of entities</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#properties -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/ns/void#properties">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The total number of distinct properties in a void:Dataset. In other words, the number of distinct resources that occur in the predicate position of triples in the dataset.</rdfs:comment>
+        <rdfs:label>number of properties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#triples -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/ns/void#triples">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The total number of triples contained in a void:Dataset.</rdfs:comment>
+        <rdfs:label>number of triples</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#uriSpace -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/ns/void#uriSpace">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>A URI that is a common string prefix of all the entity URIs in a void:Dataset.</rdfs:comment>
+        <rdfs:label>URI space</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#lastUpdated -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois#lastUpdated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>xsd:datetime value holding the timestamp of the last vois:iGraph</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#streamLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois#streamLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>WebSocket URI, where the stream can be consumed</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois#tboxLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois#tboxLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>URI pointing to the location of the tbox of the stream</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:comment>The websocket URI to consume the stream</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/Agent -->
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/Agent"/>
+    
+
+
+    <!-- http://rdfs.org/ns/void#Dataset -->
+
+    <owl:Class rdf:about="http://rdfs.org/ns/void#Dataset">
+        <rdfs:comment>A set of RDF triples that are published, maintained or aggregated by a single provider.</rdfs:comment>
+        <rdfs:label>dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/ns/void#DatasetDescription -->
+
+    <owl:Class rdf:about="http://rdfs.org/ns/void#DatasetDescription">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment>A web resource whose foaf:primaryTopic or foaf:topics include void:Datasets.</rdfs:comment>
+        <rdfs:label>dataset description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/ns/void#Linkset -->
+
+    <owl:Class rdf:about="http://rdfs.org/ns/void#Linkset">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>A collection of RDF links between two void:Datasets.</rdfs:comment>
+        <rdfs:label>linkset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/ns/void#TechnicalFeature -->
+
+    <owl:Class rdf:about="http://rdfs.org/ns/void#TechnicalFeature"/>
+    
+
+
+    <!-- http://streamreasoning.org/vois#DataStream -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois#DataStream">
+        <rdfs:comment>sequences of RDF statement with a temporal annotation</rdfs:comment>
+        <rdfs:isDefinedBy>http://dblp.uni-trier.de/rec/html/journals/ijswis/DellAglioVCC14</rdfs:isDefinedBy>
+        <rdfs:label>stream</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois#DescriptionGraph -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois#DescriptionGraph">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sparql-service-description#NamedGraph"/>
+        <rdfs:comment>vois:dGraph is a named graph holding static or slowly changing information describing the vois:DataStream</rdfs:comment>
+        <rdfs:label>dGraph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois#InstantaneousGraph -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois#InstantaneousGraph">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sparql-service-description#NamedGraph"/>
+        <rdfs:comment>vois:iGraph is a named graph, that represents one stream element</rdfs:comment>
+        <rdfs:isDefinedBy>https://link.springer.com/chapter/10.1007%2F978-3-319-46547-0_15</rdfs:isDefinedBy>
+        <rdfs:label>iGraph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois#Mappings -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois#Mappings">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#TechnicalFeature"/>
+        <rdfs:comment>Information about mappings files used to generate the data stream.
 e.g. link to .obda</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#Origin -->
+    </owl:Class>
+    
 
-<rdf:Description rdf:about="http://streamreasoning.org/vois#Origin">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#TechnicalFeature"/>
-	<rdfs:comment>Information about the raw data source, that was used with mappings to generate the RDF data stream</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#Sink -->
 
-<rdf:Description rdf:about="http://streamreasoning.org/vois#Sink">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-	<rdfs:comment>Sink represents an entity that was generated by an activity using another source entity e.g. DataSet, DataStream, ...</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#Source -->
+    <!-- http://streamreasoning.org/vois#Origin -->
 
-<rdf:Description rdf:about="http://streamreasoning.org/vois#Source">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-	<rdfs:comment>Source represents the entity that was used by an activity to generate another entity e.g. DataSet, DataStream, ...</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#StreamGraph -->
+    <owl:Class rdf:about="http://streamreasoning.org/vois#Origin">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#TechnicalFeature"/>
+        <rdfs:comment>Information about the raw data source, that was used with mappings to generate the RDF data stream</rdfs:comment>
+    </owl:Class>
+    
 
-<rdf:Description rdf:about="http://streamreasoning.org/vois#StreamGraph">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#DatasetDescription"/>
-	<rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sparql-service-description#NamedGraph"/>
-	<rdfs:comment>vois:sGraph is a named graph, that contains the descriptions of the vois:iGraphs</rdfs:comment>
-	<rdfs:isDefinedBy>https://link.springer.com/chapter/10.1007%2F978-3-319-46547-0_15</rdfs:isDefinedBy>
-	<rdfs:label>sGraph</rdfs:label>
-</rdf:Description>
-<!--  -->
-<!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Property -->
 
-<rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdf:Description>
-<!--  -->
-<!-- http://www.w3.org/2000/01/rdf-schema#Class -->
+    <!-- http://streamreasoning.org/vois#Sink -->
 
-<rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Class">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdf:Description>
-<!--  -->
-<!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
+    <owl:Class rdf:about="http://streamreasoning.org/vois#Sink">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment>Sink represents an entity that was generated by an activity using another source entity e.g. DataSet, DataStream, ...</rdfs:comment>
+    </owl:Class>
+    
 
-<rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdf:Description>
-<!--  -->
-<!-- http://www.w3.org/2006/time#TemporalEntity -->
 
-<rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdf:Description>
-<!--  -->
-<!-- http://www.w3.org/ns/prov#Entity -->
+    <!-- http://streamreasoning.org/vois#Source -->
 
-<rdf:Description rdf:about="http://www.w3.org/ns/prov#Entity">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdf:Description>
-<!--  -->
-<!-- http://www.w3.org/ns/sparql-service-description#NamedGraph -->
+    <owl:Class rdf:about="http://streamreasoning.org/vois#Source">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment>Source represents the entity that was used by an activity to generate another entity e.g. DataSet, DataStream, ...</rdfs:comment>
+    </owl:Class>
+    
 
-<rdf:Description rdf:about="http://www.w3.org/ns/sparql-service-description#NamedGraph">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-	<rdfs:comment>An instance of sd:NamedGraph represents a named graph having a name (via sd:name) and an optional graph description (via sd:graph).</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!-- http://xmlns.com/foaf/0.1/Document -->
 
-<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Document">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdf:Description>
-<!--  -->
-<!-- http://xmlns.com/foaf/0.1/Person -->
+    <!-- http://streamreasoning.org/vois#StreamGraph -->
 
-<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdf:Description>
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- ################################################################# -->
-<!-- # -->
-<!-- #    Individuals -->
-<!-- # -->
-<!-- ################################################################# -->
-<!--  -->
-<!--  -->
-<!-- http://streamreasoning.org/vois#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano -->
+    <owl:Class rdf:about="http://streamreasoning.org/vois#StreamGraph">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>vois:sGraph is a named graph, that contains the descriptions of the vois:iGraphs</rdfs:comment>
+        <rdfs:isDefinedBy>https://link.springer.com/chapter/10.1007%2F978-3-319-46547-0_15</rdfs:isDefinedBy>
+        <rdfs:label>sGraph</rdfs:label>
+    </owl:Class>
+    
 
-<rdf:Description rdf:about="http://streamreasoning.org/vois#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#EmanueleDellaValle -->
 
-<rdf:Description rdf:about="http://streamreasoning.org/vois#EmanueleDellaValle">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#RiccardoTommasini -->
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Property -->
 
-<rdf:Description rdf:about="http://streamreasoning.org/vois#RiccardoTommasini">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-</rdf:Description>
-<!--  -->
-<!-- http://streamreasoning.org/vois#YehiaAboSedira -->
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    
 
-<rdf:Description rdf:about="http://streamreasoning.org/vois#YehiaAboSedira">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-</rdf:Description>
-<!--  -->
-<!-- http://vocab.deri.ie/void -->
 
-<rdf:Description rdf:about="http://vocab.deri.ie/void">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</rdf:Description>
-<!--  -->
-<!-- http://vocab.deri.ie/void#LiDRC -->
+    <!-- http://www.w3.org/2000/01/rdf-schema#Class -->
 
-<rdf:Description rdf:about="http://vocab.deri.ie/void#LiDRC">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
-	<foaf:homepage rdf:resource="http://linkeddata.deri.ie/"/>
-	<foaf:name>LiDRC</foaf:name>
-</rdf:Description>
-<!--  -->
-<!-- http://vocab.deri.ie/void#Talis -->
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    
 
-<rdf:Description rdf:about="http://vocab.deri.ie/void#Talis">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
-	<foaf:homepage rdf:resource="http://www.talis.com/"/>
-	<foaf:name>Talis</foaf:name>
-</rdf:Description>
-<!--  -->
-<!-- http://vocab.deri.ie/void#rdf -->
 
-<rdf:Description rdf:about="http://vocab.deri.ie/void#rdf">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<dcterms:FileFormat></dcterms:FileFormat>
-	<adms:accessURL>http://vocab.deri.ie/void.rdf</adms:accessURL>
-	<adms:status rdf:resource="http://purl.org/adms/status/Completed"/>
-</rdf:Description>
-<!--  -->
-<!-- http://vocab.deri.ie/void#ttl -->
+    <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
 
-<rdf:Description rdf:about="http://vocab.deri.ie/void#ttl">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<dcterms:FileFormat></dcterms:FileFormat>
-	<adms:accessURL>http://vocab.deri.ie/void.ttl</adms:accessURL>
-	<adms:status rdf:resource="http://purl.org/adms/status/Completed"/>
-</rdf:Description>
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- ################################################################# -->
-<!-- # -->
-<!-- #    Annotations -->
-<!-- # -->
-<!-- ################################################################# -->
-<!--  -->
-<!--  -->
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    
 
-<rdf:Description rdf:about="http://streamreasoning.org/vois#start">
-	<rdfs:comment>Point to starting point of a vois:Window. can be a time instance or event</rdfs:comment>
-</rdf:Description>
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- ################################################################# -->
-<!-- # -->
-<!-- #    General axioms -->
-<!-- # -->
-<!-- ################################################################# -->
-<!--  -->
-<!--  -->
 
-<rdf:Description rdf:nodeID="genid1">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-	<owl:members rdf:nodeID="genid4"/>
-</rdf:Description>
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
 
-<rdf:Description rdf:nodeID="genid4">
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-	<rdf:first rdf:resource="http://streamreasoning.org/vois#DescriptionGraph"/>
-	<rdf:rest rdf:nodeID="genid3"/>
-</rdf:Description>
+    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
+    
 
-<rdf:Description rdf:nodeID="genid3">
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-	<rdf:first rdf:resource="http://streamreasoning.org/vois#InstantaneousGraph"/>
-	<rdf:rest rdf:nodeID="genid2"/>
-</rdf:Description>
 
-<rdf:Description rdf:nodeID="genid2">
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-	<rdf:first rdf:resource="http://streamreasoning.org/vois#StreamGraph"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<!--  -->
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sparql-service-description#NamedGraph -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sparql-service-description#NamedGraph">
+        <rdfs:comment>An instance of sd:NamedGraph represents a named graph having a name (via sd:name) and an optional graph description (via sd:graph).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Document"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://streamreasoning.org/vois#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano -->
+
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://streamreasoning.org/vois#EmanueleDellaValle -->
+
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois#EmanueleDellaValle">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://streamreasoning.org/vois#RiccardoTommasini -->
+
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois#RiccardoTommasini">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://streamreasoning.org/vois#YehiaAboSedira -->
+
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois#YehiaAboSedira">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.deri.ie/void -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.deri.ie/void"/>
+    
+
+
+    <!-- http://vocab.deri.ie/void#LiDRC -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.deri.ie/void#LiDRC">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <foaf:homepage rdf:resource="http://linkeddata.deri.ie/"/>
+        <foaf:name>LiDRC</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.deri.ie/void#Talis -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.deri.ie/void#Talis">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <foaf:homepage rdf:resource="http://www.talis.com/"/>
+        <foaf:name>Talis</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.deri.ie/void#rdf -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.deri.ie/void#rdf">
+        <dcterms:FileFormat></dcterms:FileFormat>
+        <adms:accessURL>http://vocab.deri.ie/void.rdf</adms:accessURL>
+        <adms:status rdf:resource="http://purl.org/adms/status/Completed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.deri.ie/void#ttl -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.deri.ie/void#ttl">
+        <dcterms:FileFormat></dcterms:FileFormat>
+        <adms:accessURL>http://vocab.deri.ie/void.ttl</adms:accessURL>
+        <adms:status rdf:resource="http://purl.org/adms/status/Completed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://streamreasoning.org/vois#start">
+        <rdfs:comment>Point to starting point of a vois:Window. can be a time instance or event</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://streamreasoning.org/vois#DescriptionGraph"/>
+            <rdf:Description rdf:about="http://streamreasoning.org/vois#InstantaneousGraph"/>
+            <rdf:Description rdf:about="http://streamreasoning.org/vois#StreamGraph"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
 <!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 
-</rdf:RDF>

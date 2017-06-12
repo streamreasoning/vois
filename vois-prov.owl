@@ -5,6 +5,7 @@
      xmlns:adms="http://www.w3.org/ns/adms#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:sd="http://www.w3.org/ns/sparql-service-description#"
      xmlns:vois="http://streamreasoning.org/vois#"
@@ -17,8 +18,8 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://streamreasoning.org/vois-prov">
         <owl:versionIRI rdf:resource="http://streamreasoning.org/vois-prov/1.0.0"/>
+        <owl:imports rdf:resource="http://streamreasoning.org/vois/1.0.0"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/prov-o-20130430"/>
-        <owl:imports rdf:resource="http://streamreasoning.org/vois"/>
         <dc:creator rdf:resource="http://streamreasoning.org/vois#EmanueleDellaValle"/>
         <vann:preferredNamespaceUri>http://streamreasoning.org/vois-prov#</vann:preferredNamespaceUri>
         <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-23T13:00:00</dcterms:created>
@@ -26,6 +27,105 @@
         <vann:preferredNamespacePrefix>voisp</vann:preferredNamespacePrefix>
         <dc:creator rdf:resource="http://streamreasoning.org/vois#YehiaAboSedira"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#r2rGenerated -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-prov#r2rGenerated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generated"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#R2ROperator"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>Relation generated from relation using an R2ROperator</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#r2rUsed -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-prov#r2rUsed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#S2ROperator"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>Relation used to generate another relation using an R2ROperator</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#r2sGenerated -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-prov#r2sGenerated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generated"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#R2SOperator"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+        <rdfs:comment>Stream generated from relation using an R2SOperator</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#r2sUsed -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-prov#r2sUsed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#R2ROperator"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+        <rdfs:comment>Relation used to generate another Stream using an R2SOperator</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#s2rGenerated -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-prov#s2rGenerated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generated"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#S2ROperator"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>Relation generated from stream using an S2ROperator</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#s2rUsed -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-prov#s2rUsed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#S2SOperator"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>Stream used to generate a relation using an S2ROperator</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#s2sGenerated -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-prov#s2sGenerated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generated"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#S2SOperator"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+        <rdfs:comment>Stream generated from stream using an S2SOperator</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#s2sUsed -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-prov#s2sUsed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#R2SOperator"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+        <rdfs:comment>Stream used to generate a stream using an S2SOperator</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
@@ -44,7 +144,7 @@
 
     <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-prov#query">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#RSPQLTransformation"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-prov#RSPQLOperator"/>
     </owl:DatatypeProperty>
     
 
@@ -60,11 +160,32 @@
     
 
 
-    <!-- http://streamreasoning.org/vois#DataStream -->
+    <!-- http://streamreasoning.org/vois-prov#Operator -->
 
-    <rdf:Description rdf:about="http://streamreasoning.org/vois#DataStream">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-    </rdf:Description>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#Operator">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:comment>Operator used to produce an entity from another enitity</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#R2ROperator -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#R2ROperator">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#Operator"/>
+        <rdfs:comment>Operators that produce relations from other relations.</rdfs:comment>
+        <rdfs:isDefinedBy>Arvind Arasu, Shivnath Babu, and Jennifer Widom. 2006. The CQL continuous query language: semantic foundations and query execution. The VLDB Journal 15, 2 (June 2006), 121-142. DOI=http://dx.doi.org/10.1007/s00778-004-0147-z</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#R2SOperator -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#R2SOperator">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#Operator"/>
+        <rdfs:comment>Operators that produce a stream from a relation.</rdfs:comment>
+        <rdfs:isDefinedBy>Arvind Arasu, Shivnath Babu, and Jennifer Widom. 2006. The CQL continuous query language: semantic foundations and query execution. The VLDB Journal 15, 2 (June 2006), 121-142. DOI=http://dx.doi.org/10.1007/s00778-004-0147-z</rdfs:isDefinedBy>
+    </owl:Class>
     
 
 
@@ -76,11 +197,12 @@
     
 
 
-    <!-- http://streamreasoning.org/vois-prov#RSPQLTransformation -->
+    <!-- http://streamreasoning.org/vois-prov#RSPQLOperator -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#RSPQLTransformation">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#Transform"/>
-        <owl:disjointWith rdf:resource="http://streamreasoning.org/vois-prov#SetTransformation"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#RSPQLOperator">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#R2SOperator"/>
+        <owl:disjointWith rdf:resource="http://streamreasoning.org/vois-prov#SetOperator"/>
+        <rdfs:comment>RDF Stream Processing (RSP) Operators that produce a stream by appling a C-Sparql query to another windowed stream.</rdfs:comment>
     </owl:Class>
     
 
@@ -88,31 +210,46 @@
     <!-- http://streamreasoning.org/vois-prov#Replay -->
 
     <owl:Class rdf:about="http://streamreasoning.org/vois-prov#Replay">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#R2SOperator"/>
+        <rdfs:comment>Replay operator produce a stream from a static RDF dataset</rdfs:comment>
+        <rdfs:isDefinedBy>https://link.springer.com/chapter/10.1007%2F978-3-319-46547-0_15</rdfs:isDefinedBy>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois-prov#SetTransformation -->
+    <!-- http://streamreasoning.org/vois-prov#S2ROperator -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#SetTransformation">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#Transform"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#S2ROperator">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#Operator"/>
+        <rdfs:comment>Operators that produce a relation from a stream.</rdfs:comment>
+        <rdfs:isDefinedBy>Arvind Arasu, Shivnath Babu, and Jennifer Widom. 2006. The CQL continuous query language: semantic foundations and query execution. The VLDB Journal 15, 2 (June 2006), 121-142. DOI=http://dx.doi.org/10.1007/s00778-004-0147-z</rdfs:isDefinedBy>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois-prov#Transform -->
+    <!-- http://streamreasoning.org/vois-prov#S2SOperator -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#Transform">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#S2SOperator">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#Operator"/>
+        <rdfs:comment>operators that produce a stream form another stream.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois-prov#UnionTransformation -->
+    <!-- http://streamreasoning.org/vois-prov#SetOperator -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#UnionTransformation">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#SetTransformation"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#SetOperator">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#S2SOperator"/>
+        <rdfs:comment>Operator that produce a stream by applying set algebra operator on other streams.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/vois-prov#UnionOperator -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/vois-prov#UnionOperator">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-prov#SetOperator"/>
+        <rdfs:comment>Operator that produce a stream as a union of other streams.</rdfs:comment>
     </owl:Class>
     
 
