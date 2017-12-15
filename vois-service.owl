@@ -1,4 +1,4 @@
-@prefix : <http://streamreasoning.org/vois#> .
+@prefix : <http://streamreasoning.org/vois-sd#> .
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -8,10 +8,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vois: <http://streamreasoning.org/vois#> .
-@base <http://streamreasoning.org/vois> .
+@prefix vois-sd: <http://streamreasoning.org/vois-sd#> .
+@base <http://streamreasoning.org/vois-sd> .
 
-<http://streamreasoning.org/vois> rdf:type owl:Ontology ;
-                                   owl:versionIRI <http://streamreasoning.org/vois/2.0.0> .
+<http://streamreasoning.org/vois-sd> rdf:type owl:Ontology ;
+                                      owl:versionIRI <http://streamreasoning.org/vois-sd/2.0.0> .
 
 #################################################################
 #    Annotation properties
@@ -28,72 +29,78 @@ sd:name rdf:type owl:AnnotationProperty ;
 #    Object Properties
 #################################################################
 
-###  http://streamreasoning.org/vois#availableGraphs
-vois:availableGraphs rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf owl:topObjectProperty ;
-                     rdfs:domain vois:RSPService ;
-                     rdfs:range vois:Window .
+###  http://streamreasoning.org/vois-sd#availableGraphs
+vois-sd:availableGraphs rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdfs:domain vois-sd:RSPService ;
+                        rdfs:range vois-sd:Window .
 
 
-###  http://streamreasoning.org/vois#defaultGraph
-vois:defaultGraph rdf:type owl:ObjectProperty ;
-                  rdfs:domain vois:RDFStream ;
-                  rdfs:range sd:Graph ;
-                  rdfs:comment "Relates an instance of vois:RDFStream to the description of its default graph." .
+###  http://streamreasoning.org/vois-sd#defaultGraph
+vois-sd:defaultGraph rdf:type owl:ObjectProperty ;
+                     rdfs:domain vois:RDFStream ;
+                     rdfs:range sd:Graph ;
+                     rdfs:comment "Relates an instance of vois:RDFStream to the description of its default graph." .
 
 
-###  http://streamreasoning.org/vois#endedAt
-vois:endedAt rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
-             rdfs:domain vois:Window ;
-             rdfs:range time:Instant .
-
-
-###  http://streamreasoning.org/vois#graph
-vois:graph rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain sd:NamedGraph ;
-           rdfs:range sd:Graph ;
-           rdfs:comment "Relates a named graph to its graph description." .
-
-
-###  http://streamreasoning.org/vois#namedGraph
-vois:namedGraph rdf:type owl:ObjectProperty ;
+###  http://streamreasoning.org/vois-sd#endedAt
+vois-sd:endedAt rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
-                rdfs:domain vois:Window ;
-                rdfs:range sd:NamedGraph ;
-                rdfs:comment "Relates an instance of vois:Window to the description of one of its named graphs. The description of such a named graph MUST include the sd:name property." ;
-                rdfs:label "named graph" .
+                rdfs:domain vois-sd:Window ;
+                rdfs:range time:Instant .
 
 
-###  http://streamreasoning.org/vois#resultFormat
-vois:resultFormat rdf:type owl:ObjectProperty ;
-                  rdfs:domain vois:RSPService ;
-                  rdfs:range frmt:Format ;
-                  rdfs:comment "Relates an instance of sd:Service to a format that is supported for serializing query results." ;
-                  rdfs:label "result format" .
+###  http://streamreasoning.org/vois-sd#graph
+vois-sd:graph rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain sd:NamedGraph ;
+              rdfs:range sd:Graph ;
+              rdfs:comment "Relates a named graph to its graph description." .
 
 
-###  http://streamreasoning.org/vois#rspEndpoint
-vois:rspEndpoint rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
-                 rdfs:domain vois:RSPService ;
-                 rdfs:comment "The RSP-QL endpoint of an vois:RSPService that implements the RSP-QL Protocol service. The object of the vois:rspEndpoint property is an IRI." ;
-                 rdfs:label "RSP endpoint" .
+###  http://streamreasoning.org/vois-sd#hasReportingPolicy
+vois-sd:hasReportingPolicy rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdfs:domain vois-sd:RSPService ;
+                           rdfs:range vois-sd:ReportingPolicy .
 
 
-###  http://streamreasoning.org/vois#startedAt
-vois:startedAt rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf owl:topObjectProperty ;
-               rdfs:domain vois:Window ;
-               rdfs:range time:Instant .
+###  http://streamreasoning.org/vois-sd#namedGraph
+vois-sd:namedGraph rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain vois-sd:Window ;
+                   rdfs:range sd:NamedGraph ;
+                   rdfs:comment "Relates an instance of vois:Window to the description of one of its named graphs. The description of such a named graph MUST include the sd:name property." ;
+                   rdfs:label "named graph" .
 
 
-###  http://streamreasoning.org/vois#startingTime
-vois:startingTime rdf:type owl:ObjectProperty ;
+###  http://streamreasoning.org/vois-sd#resultFormat
+vois-sd:resultFormat rdf:type owl:ObjectProperty ;
+                     rdfs:domain vois-sd:RSPService ;
+                     rdfs:range frmt:Format ;
+                     rdfs:comment "Relates an instance of sd:Service to a format that is supported for serializing query results." ;
+                     rdfs:label "result format" .
+
+
+###  http://streamreasoning.org/vois-sd#rspEndpoint
+vois-sd:rspEndpoint rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain vois-sd:RSPService ;
+                    rdfs:comment "The RSP-QL endpoint of an vois:RSPService that implements the RSP-QL Protocol service. The object of the vois:rspEndpoint property is an IRI." ;
+                    rdfs:label "RSP endpoint" .
+
+
+###  http://streamreasoning.org/vois-sd#startedAt
+vois-sd:startedAt rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
-                  rdfs:domain vois:WindowOperator ;
+                  rdfs:domain vois-sd:Window ;
                   rdfs:range time:Instant .
+
+
+###  http://streamreasoning.org/vois-sd#startingTime
+vois-sd:startingTime rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:range time:Instant .
 
 
 ###  http://www.w3.org/ns/sparql-service-description#availableGraphs
@@ -236,34 +243,19 @@ sd:supportedLanguage rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://streamreasoning.org/vois#range
-vois:range rdf:type owl:DatatypeProperty ;
-           rdfs:domain vois:WindowOperator ;
-           rdfs:range xsd:positiveInteger .
+###  http://streamreasoning.org/vois-sd#range
+vois-sd:range rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:positiveInteger .
 
 
-###  http://streamreasoning.org/vois#step
-vois:step rdf:type owl:DatatypeProperty ;
-          rdfs:domain vois:WindowOperator ;
-          rdfs:range xsd:positiveInteger .
+###  http://streamreasoning.org/vois-sd#step
+vois-sd:step rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:positiveInteger .
 
 
 #################################################################
 #    Classes
 #################################################################
-
-###  http://streamreasoning.org/vois#PhysicalWindow
-vois:PhysicalWindow rdf:type owl:Class ;
-                    rdfs:subClassOf vois:Window ;
-                    rdfs:comment "Window defined by an interval size (in units of RDF elements)" .
-
-
-###  http://streamreasoning.org/vois#PhysicalWindowOperator
-vois:PhysicalWindowOperator rdf:type owl:Class ;
-                            rdfs:subClassOf vois:WindowOperator ;
-                            owl:disjointWith vois:TimeBasedWindowOperator ;
-                            rdfs:comment "Operator sampling the data stream into PhysicalWindow, i.e. based on the size of the window not a time interval" .
-
 
 ###  http://streamreasoning.org/vois#RDFStream
 vois:RDFStream rdf:type owl:Class ;
@@ -271,44 +263,83 @@ vois:RDFStream rdf:type owl:Class ;
                rdfs:label "RDFStream" .
 
 
-###  http://streamreasoning.org/vois#RSPService
-vois:RSPService rdf:type owl:Class ;
-                rdfs:comment "An instance of vois:Service represents a RSP service made available via the RSP Protocol." .
+###  http://streamreasoning.org/vois-sd#PhysicalWindow
+vois-sd:PhysicalWindow rdf:type owl:Class ;
+                       rdfs:subClassOf vois-sd:Window ;
+                       rdfs:comment "Window defined by an interval size (in units of RDF elements)" .
 
 
-###  http://streamreasoning.org/vois#StreamingDataset
-vois:StreamingDataset rdf:type owl:Class ;
-                      rdfs:comment "A streaming dataset is a set composed by an (optional) default graph, n (n ≥ 0) named graphs and m (m ≥ 0) named time-varying graphs" ;
-                      rdfs:label "SDS" .
+###  http://streamreasoning.org/vois-sd#R2ROperation
+vois-sd:R2ROperation rdf:type owl:Class ;
+                     rdfs:subClassOf vois-sd:RSPFeature .
 
 
-###  http://streamreasoning.org/vois#TimeBasedWindow
-vois:TimeBasedWindow rdf:type owl:Class ;
-                     rdfs:subClassOf vois:Window ;
-                     rdfs:comment "A time-based window is a window defined through two time instants o, c (respectively named opening and closing time instants) such that: W(S) = {d|(d, t) ∈ S ∧ t ∈ (o, c]}" .
+###  http://streamreasoning.org/vois-sd#R2SOperation
+vois-sd:R2SOperation rdf:type owl:Class ;
+                     rdfs:subClassOf vois-sd:RSPFeature .
 
 
-###  http://streamreasoning.org/vois#TimeBasedWindowOperator
-vois:TimeBasedWindowOperator rdf:type owl:Class ;
-                             rdfs:subClassOf vois:WindowOperator ;
-                             rdfs:comment "Operator sampling the data stream into TimeBasedWindow, i.e. based on time intervals not the size of the window" .
+###  http://streamreasoning.org/vois-sd#RSPFeature
+vois-sd:RSPFeature rdf:type owl:Class .
 
 
-###  http://streamreasoning.org/vois#TimeVarryingGraph
-vois:TimeVarryingGraph rdf:type owl:Class ;
-                       rdfs:comment "A time-varying graph G is a function that relates time instants t ∈ T to RDF graphs: G : T → {g | g is an RDF graph}" .
+###  http://streamreasoning.org/vois-sd#RSPService
+vois-sd:RSPService rdf:type owl:Class ;
+                   rdfs:comment "An instance of vois:Service represents a RSP service made available via the RSP Protocol." .
 
 
-###  http://streamreasoning.org/vois#Window
-vois:Window rdf:type owl:Class ;
-            rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ;
-            rdfs:comment "A window W(S) is a set of RDF statements extracted from a stream S." .
+###  http://streamreasoning.org/vois-sd#ReportingPolicy
+vois-sd:ReportingPolicy rdf:type owl:Class ;
+                        rdfs:subClassOf vois-sd:RSPFeature ;
+                        rdfs:label "Reporting Policy" .
 
 
-###  http://streamreasoning.org/vois#WindowOperator
-vois:WindowOperator rdf:type owl:Class ;
-                    rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
-                    rdfs:comment "Operator that sample the data stream to window" .
+###  http://streamreasoning.org/vois-sd#S2ROperation
+vois-sd:S2ROperation rdf:type owl:Class ;
+                     rdfs:subClassOf vois-sd:RSPFeature .
+
+
+###  http://streamreasoning.org/vois-sd#S2SOperation
+vois-sd:S2SOperation rdf:type owl:Class ;
+                     rdfs:subClassOf vois-sd:RSPFeature .
+
+
+###  http://streamreasoning.org/vois-sd#SDS
+vois-sd:SDS rdf:type owl:Class ;
+            rdfs:comment "A streaming dataset is a set composed by an (optional) default graph, n (n ≥ 0) named graphs and m (m ≥ 0) named time-varying graphs" ;
+            rdfs:label "SDS" .
+
+
+###  http://streamreasoning.org/vois-sd#SetOperation
+vois-sd:SetOperation rdf:type owl:Class ;
+                     rdfs:subClassOf vois-sd:S2SOperation .
+
+
+###  http://streamreasoning.org/vois-sd#TimeBasedWindow
+vois-sd:TimeBasedWindow rdf:type owl:Class ;
+                        rdfs:subClassOf vois-sd:Window ;
+                        rdfs:comment "A time-based window is a window defined through two time instants o, c (respectively named opening and closing time instants) such that: W(S) = {d|(d, t) ∈ S ∧ t ∈ (o, c]}" .
+
+
+###  http://streamreasoning.org/vois-sd#TimeControl
+vois-sd:TimeControl rdf:type owl:Class ;
+                    rdfs:subClassOf vois-sd:RSPFeature .
+
+
+###  http://streamreasoning.org/vois-sd#TimeSemantics
+vois-sd:TimeSemantics rdf:type owl:Class ;
+                      rdfs:subClassOf vois-sd:RSPFeature .
+
+
+###  http://streamreasoning.org/vois-sd#TimeVaryingGraph
+vois-sd:TimeVaryingGraph rdf:type owl:Class ;
+                         rdfs:comment "A time-varying graph G is a function that relates time instants t ∈ T to RDF graphs: G : T → {g | g is an RDF graph}" .
+
+
+###  http://streamreasoning.org/vois-sd#Window
+vois-sd:Window rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ;
+               rdfs:comment "A window W(S) is a set of RDF statements extracted from a stream S." .
 
 
 ###  http://www.w3.org/2006/time#Instant
@@ -321,10 +352,6 @@ time:Instant rdf:type owl:Class .
 
 ###  http://www.w3.org/ns/formats/Format
 frmt:Format rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/prov#Activity
-<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/sparql-service-description#Aggregate
@@ -402,6 +429,81 @@ sd:Service rdf:type owl:Class ;
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://streamreasoning.org/vois-sd#RSPQL
+vois-sd:RSPQL rdf:type owl:NamedIndividual ,
+                       sd:Language .
+
+
+###  http://streamreasoning.org/vois-sd#difference
+vois-sd:difference rdf:type owl:NamedIndividual ,
+                            vois-sd:SetOperation .
+
+
+###  http://streamreasoning.org/vois-sd#event_time
+vois-sd:event_time rdf:type owl:NamedIndividual ,
+                            vois-sd:TimeSemantics .
+
+
+###  http://streamreasoning.org/vois-sd#externally_controlled
+vois-sd:externally_controlled rdf:type owl:NamedIndividual ,
+                                       vois-sd:TimeControl .
+
+
+###  http://streamreasoning.org/vois-sd#filtering
+vois-sd:filtering rdf:type owl:NamedIndividual ,
+                           vois-sd:S2SOperation .
+
+
+###  http://streamreasoning.org/vois-sd#ingestion_time
+vois-sd:ingestion_time rdf:type owl:NamedIndividual ,
+                                vois-sd:TimeSemantics .
+
+
+###  http://streamreasoning.org/vois-sd#internally_controlled
+vois-sd:internally_controlled rdf:type owl:NamedIndividual ,
+                                       vois-sd:TimeControl .
+
+
+###  http://streamreasoning.org/vois-sd#intersection
+vois-sd:intersection rdf:type owl:NamedIndividual ,
+                              vois-sd:SetOperation .
+
+
+###  http://streamreasoning.org/vois-sd#non_empty_content
+vois-sd:non_empty_content rdf:type owl:NamedIndividual ,
+                                   vois-sd:ReportingPolicy .
+
+
+###  http://streamreasoning.org/vois-sd#on_content_change
+vois-sd:on_content_change rdf:type owl:NamedIndividual ,
+                                   vois-sd:ReportingPolicy .
+
+
+###  http://streamreasoning.org/vois-sd#on_window_close
+vois-sd:on_window_close rdf:type owl:NamedIndividual ,
+                                 vois-sd:ReportingPolicy .
+
+
+###  http://streamreasoning.org/vois-sd#periodic
+vois-sd:periodic rdf:type owl:NamedIndividual ,
+                          vois-sd:ReportingPolicy .
+
+
+###  http://streamreasoning.org/vois-sd#processing_time
+vois-sd:processing_time rdf:type owl:NamedIndividual ,
+                                 vois-sd:TimeSemantics .
+
+
+###  http://streamreasoning.org/vois-sd#union
+vois-sd:union rdf:type owl:NamedIndividual ,
+                       vois-sd:SetOperation .
+
+
+###  http://streamreasoning.org/vois-sd#windowing
+vois-sd:windowing rdf:type owl:NamedIndividual ,
+                           vois-sd:S2ROperation .
+
 
 ###  http://www.w3.org/ns/sparql-service-description#BasicFederatedQuery
 sd:BasicFederatedQuery rdf:type owl:NamedIndividual ,
