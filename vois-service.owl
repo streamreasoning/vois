@@ -267,7 +267,7 @@ vois:PhysicalWindowOperator rdf:type owl:Class ;
 
 ###  http://streamreasoning.org/vois#RDFStream
 vois:RDFStream rdf:type owl:Class ;
-               rdfs:comment "A stream composed of RDF data elements, i.e. RDF graphs and/or triples." ;
+               rdfs:comment "A stream composed of non decreasing timestamped RDF data elements, i.e. RDF graphs and/or triples." ;
                rdfs:label "RDFStream" .
 
 
