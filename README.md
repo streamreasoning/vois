@@ -58,3 +58,6 @@ VoIS core can be seen as an extension of VoID ontology to describe a datastream,
 VoIS windowing extends the core module to provide details about the dynamics of the stream's windows, and there technical details, as well as, possibility to access previously streamed window that are no more avaialbe for live usage. It is also possible to express details about the windowing specification and behavior.
 
 VoIS Provenance uses Prov-o to enrich vois:DataStream with information about the activities and agents involved in the Streaming process.
+
+# Vois Diagram
+![Vois Diagram](https://github.com/streamreasoning/vois/blob/master/vois.png)
