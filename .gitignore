@@ -1,2 +1,6 @@
 *.xml
 *.obda
+*.jar
+*.sh
+*.ttl
+/dist

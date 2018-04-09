@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns="http://ex.org/afflent#"
+	xmlns:mw="http://www.semanticweb.org/mobile-wave#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+<rdf:Description rdf:about="http://ex.org/afflent">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#onPlatform">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#hasUnite">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#hasValue">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Accuracy">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#GPSMeasurementCapability">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#GPSSensor">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/mobile-wave#SmartPhone">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#GPSAccuraccy_123">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Accuracy"/>
+	<mw:hasUnite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meter</mw:hasUnite>
+	<mw:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</mw:hasValue>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#GPSMeasurementCapability_123">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/mobile-wave#GPSMeasurementCapability"/>
+	<ssn:hasMeasurementProperty rdf:resource="http://ex.org/afflent#GPSAccuraccy_123"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#GPSSensor_123">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/mobile-wave#GPSSensor"/>
+	<ssn:onPlatform rdf:resource="http://ex.org/afflent#SmartPhone_123"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ex.org/afflent#SmartPhone_123">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/mobile-wave#SmartPhone"/>
+</rdf:Description>
+
+</rdf:RDF>

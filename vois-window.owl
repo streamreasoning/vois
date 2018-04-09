@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://streamreasoning.org/vois#"
-     xml:base="http://streamreasoning.org/vois"
+<rdf:RDF xmlns="http://streamreasoning.org/vois-w#"
+     xml:base="http://streamreasoning.org/vois-w"
      xmlns:void="http://rdfs.org/ns/void#"
      xmlns:adms="http://www.w3.org/ns/adms#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -8,34 +8,33 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:sd="http://www.w3.org/ns/sparql-service-description#"
+     xmlns:vois="http://streamreasoning.org/vois#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:time="http://www.w3.org/2006/time#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://streamreasoning.org/vois">
-        <owl:versionIRI rdf:resource="http://streamreasoning.org/vois/1.0.0"/>
-        <owl:imports rdf:resource="http://www.w3.org/ns/prov-o#"/>
-        <owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
+    <owl:Ontology rdf:about="http://streamreasoning.org/vois-w">
+        <owl:versionIRI rdf:resource="http://streamreasoning.org/vois-w/1.0.0"/>
+        <owl:imports rdf:resource="http://streamreasoning.org/vois/1.0.0"/>
         <vann:preferredNamespacePrefix>vois</vann:preferredNamespacePrefix>
         <dcterms:type rdf:resource="http://purl.org/adms/assettype/Ontology"/>
         <dcterms:partOf rdf:resource="http://streamreasoning.org/ontologies"/>
-        <dcterms:description>VoIS Core module is an extension VoID ontology, introducing basic concepts to annotate RDF data streams with meta-data needed to enable RDF Stream Processor to answer queries about the streams.
-VoIS express general meta-data based on Dublin Core, access meta-data and structural meta-data  based on VoID.
-Four classes are introduced, One main class vois:DataStream represents a sequence of RDF statement with a temporal annotation.
-An RDF Stream is represented with 2 named graphs iGraph and sGraph, where an iGraph represents one stream element, while the sGraph contains the descriptions of the iGraphs. [TripleWave: Spreading RDF Streams on the Web] 
-dGraph is a named graph suggested to catch the static information about the stream source, in case the stream is constructed by a combination, possibly conditioned, of multiple streams</dcterms:description>
         <dc:creator rdf:resource="http://streamreasoning.org/vois#EmanueleDellaValle"/>
+        <dcterms:description>VoIS Windowing module is a module VoIS ontology, introducing the concepts of windowed stream and the visible windows of an RDF Stream
+VoIS Windowing express nature of the stream and the types of windows exported, as well as windows definitions.
+In this module, Class Window represents a finite subset of RDF elements extracted from stream. Different types of windows are defined, such Physical, TimeBased and Semantic windows, 
+Where Physical, TimeBased are count based windows on RDF elements and time instance respectively, Semantic Window are dynamic, non periodic windows that depends on the occurrence of some events. 
+Each window is associated with a defined policy describing the sliding criteria of a window, two types of policy are defined, CountingPolicy for Physical and TimeBased windows and SessionPolicy for semantic windows</dcterms:description>
         <dc:contributor rdf:resource="http://streamreasoning.org/vois#YehiaAboSedira"/>
         <dcterms:status rdf:resource="http://purl.org/adms/status/UnderDevelopment"/>
         <dcterms:title>Vocabulary of Interlinked Stream (VoIS)</dcterms:title>
         <dcterms:description>The Vocabulary of Interlinked Stream (VoIS) is an RDF Schema vocabulary for expressing metadata about RDF Streams. It is intended as a bridge between the publishers and users of RDF stream data, with applications ranging from data discovery to cataloging and archiving of datastream. It resuses extising concepts from VoID, TimeLine Ontology, PROV-O. This document provides a formal definition of the new RDF classes and properties introduced for VoIS.</dcterms:description>
         <dcterms:publisher rdf:resource="http://streamreasoning.org/vois#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano"/>
         <dcterms:created>2017-03-14</dcterms:created>
-        <foaf:homepage rdf:resource="http://streamreasoning.org/vois#"/>
+        <foaf:homepage rdf:resource="http://streamreasoning.org/vois"/>
         <dc:creator rdf:resource="http://streamreasoning.org/vois#RiccardoTommasini"/>
         <dcterms:modified>2017-04-20</dcterms:modified>
         <vann:preferredNamespaceUri>http://streamreasoning.org/vois#</vann:preferredNamespaceUri>
@@ -181,20 +180,11 @@ dGraph is a named graph suggested to catch the static information about the stre
     
 
 
-    <!-- http://streamreasoning.org/vois#RSPEndpoint -->
+    <!-- http://streamreasoning.org/vois-w#streamFormat -->
 
-    <owl:AnnotationProperty rdf:about="http://streamreasoning.org/vois#RSPEndpoint">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#streamFormat -->
-
-    <owl:AnnotationProperty rdf:about="http://streamreasoning.org/vois#streamFormat">
+    <owl:AnnotationProperty rdf:about="http://streamreasoning.org/vois-w#streamFormat">
         <rdfs:comment>A digital resource format.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#DataStream"/>
     </owl:AnnotationProperty>
     
 
@@ -295,6 +285,7 @@ dGraph is a named graph suggested to catch the static information about the stre
 
     <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#feature">
         <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#TechnicalFeature"/>
         <rdfs:label>feature</rdfs:label>
     </owl:ObjectProperty>
     
@@ -403,169 +394,123 @@ dGraph is a named graph suggested to catch the static information about the stre
     
 
 
-    <!-- http://streamreasoning.org/vois#contains -->
+    <!-- http://streamreasoning.org/vois-w#ended -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#contains">
-        <owl:inverseOf rdf:resource="http://streamreasoning.org/vois#isContainedIn"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#FiniteStreamPartiton"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/vois#InstantaneousStreamElement"/>
-        <rdfs:comment>Points to an Instantaneous stream element</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#describedBy -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#describedBy">
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#InstantaneousStreamElement"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/vois#StreamSourceDescription"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#endedAt -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#endedAt">
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#ended">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#Window"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#SemanticWindow"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#Event"/>
+        <rdfs:comment>:ended points to the ending events of semantic window</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/vois#hasAffluent -->
+    <!-- http://streamreasoning.org/vois-w#ends -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#hasAffluent">
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#SwollenStream"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/vois#AffluentStream"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#hasEndpoint -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#hasEndpoint">
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/vois#Endpoint"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#hasPartition -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#hasPartition">
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/vois#FiniteStreamPartiton"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#hasRSPEndpoint -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#hasRSPEndpoint">
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/vois#hasEndpoint"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#hasStreamEndpoint -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#hasStreamEndpoint">
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/vois#hasEndpoint"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#isContainedIn -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#isContainedIn">
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#InstantaneousStreamElement"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/vois#FiniteStreamPartiton"/>
-        <rdfs:comment>Point to the finite stream partion contining instantanous stream element</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#lastUpdated -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#lastUpdated">
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#physicalUnit -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#physicalUnit">
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/vois#unit"/>
-        <owl:propertyDisjointWith rdf:resource="http://streamreasoning.org/vois#temporalUnit"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#previousElement -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#previousElement">
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#ends">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#InstantaneousStreamElement"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/vois#InstantaneousStreamElement"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#SessionPolicy"/>
+        <rdfs:comment>:ends points to the ending events of session policy</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/vois#sourceDescription -->
+    <!-- http://streamreasoning.org/vois-w#hasActiveWindow -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#sourceDescription">
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#hasActiveWindow">
+        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/vois-w#hasWindow"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#WindowedStream"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:comment>List of vois:Window ,currently visible, of a vois:WindowedStream</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-w#hasWindow -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#hasWindow">
+        <owl:inverseOf rdf:resource="http://streamreasoning.org/vois-w#inWindowedStream"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#WindowedStream"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:comment>List of different vois:Window (visible or stored) composing vois:WindowedStream</rdfs:comment>
+        <rdfs:label>has window</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-w#inWindowedStream -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#inWindowedStream">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#DatastreamDescription"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/vois#StreamSourceDescription"/>
-        <rdfs:comment>points to the source description describing the source generated it</rdfs:comment>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#WindowedStream"/>
+        <rdfs:comment>Points to the vois:WindowedStream that a window is part of.</rdfs:comment>
+        <rdfs:label>in stream</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/vois#startedAt -->
+    <!-- http://streamreasoning.org/vois-w#policy -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#startedAt">
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#policy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#Window"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#Policy"/>
+        <rdfs:comment>Points to the sliding vois:Policy of the vois:Window</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/vois#startingFrom -->
+    <!-- http://streamreasoning.org/vois-w#slidingUnit -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#startingFrom">
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#DataStream"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/vois#startingTime -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#startingTime">
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#slidingUnit">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#WindowOperator"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#CountingPolicy"/>
+        <rdfs:comment>Points to the temporal (e.g. minutes, hours) or physical (e.g. tuples, graphs) units defining  sliding step of the vois:Window.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/vois#temporalUnit -->
+    <!-- http://streamreasoning.org/vois-w#started -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#temporalUnit">
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/vois#unit"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalUnit"/>
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#started">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#SemanticWindow"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/vois-w#Event"/>
+        <rdfs:comment>:started points to the starting events of a semantic window</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://streamreasoning.org/vois#unit -->
+    <!-- http://streamreasoning.org/vois-w#starts -->
 
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois#unit"/>
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#starts">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#SessionPolicy"/>
+        <rdfs:comment>:starts points to the starting events of a session policy</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-w#unit -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#unit">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:comment>Points to the temporal (e.g. minutes, hours) or physical (e.g. tuples, graphs) units defining  range and/or step of the vois:Window.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://streamreasoning.org/vois-w#range"/>
+        <rdfs:seeAlso rdf:resource="http://streamreasoning.org/vois-w#step"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-w#wasActiveAt -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/vois-w#wasActiveAt">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment>vois:wasActiveAt refer to the duration a window was active at</rdfs:comment>
+        <rdfs:label>was active durring</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -668,21 +613,66 @@ dGraph is a named graph suggested to catch the static information about the stre
     
 
 
-    <!-- http://streamreasoning.org/vois#range -->
+    <!-- http://streamreasoning.org/vois-w#lastUpdated -->
 
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois#range">
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#WindowOperator"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#lastUpdated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://streamreasoning.org/vois#step -->
+    <!-- http://streamreasoning.org/vois-w#range -->
 
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois#step">
-        <rdfs:domain rdf:resource="http://streamreasoning.org/vois#WindowOperator"/>
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#range">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#Window"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment>size value that specifies how many units is contained in the window</rdfs:comment>
+        <rdfs:isDefinedBy>https://people.csail.mit.edu/tatbul/publications/maxstream_vldb10.pdf</rdfs:isDefinedBy>
+        <rdfs:label>size</rdfs:label>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-w#step -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#step">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/vois-w#CountingPolicy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment>slide value that specifies how many units separate the start of different consecutive windows</rdfs:comment>
+        <rdfs:isDefinedBy>https://people.csail.mit.edu/tatbul/publications/maxstream_vldb10.pdf</rdfs:isDefinedBy>
+        <rdfs:label>slide</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-w#streamLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#streamLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>WebSocket URI, where the stream can be consumed</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/vois-w#tboxLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/vois-w#tboxLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>URI pointing to the location of the tbox of the stream</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:comment>The websocket URI to consume the stream</rdfs:comment>
+    </rdf:Description>
     
 
 
@@ -734,15 +724,9 @@ dGraph is a named graph suggested to catch the static information about the stre
 
     <!-- http://rdfs.org/ns/void#TechnicalFeature -->
 
-    <owl:Class rdf:about="http://rdfs.org/ns/void#TechnicalFeature"/>
-    
-
-
-    <!-- http://streamreasoning.org/vois#AffluentStream -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/vois#AffluentStream">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#DataStream"/>
-        <rdfs:comment>Stream contributing to a swollen stream</rdfs:comment>
+    <owl:Class rdf:about="http://rdfs.org/ns/void#TechnicalFeature">
+        <rdfs:comment>A technical feature of a void:Dataset, such as a supported RDF serialization format.</rdfs:comment>
+        <rdfs:label>technical feature</rdfs:label>
     </owl:Class>
     
 
@@ -750,142 +734,97 @@ dGraph is a named graph suggested to catch the static information about the stre
     <!-- http://streamreasoning.org/vois#DataStream -->
 
     <owl:Class rdf:about="http://streamreasoning.org/vois#DataStream">
-        <rdfs:comment>sequences of RDF statement with a temporal annotation</rdfs:comment>
-        <rdfs:isDefinedBy>http://dblp.uni-trier.de/rec/html/journals/ijswis/DellAglioVCC14</rdfs:isDefinedBy>
+        <rdfs:comment>A countably infinite set of RDF triples that are published, maintained or aggregated by a single provider.</rdfs:comment>
+        <rdfs:label>stream</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois#DatastreamDescription -->
+    <!-- http://streamreasoning.org/vois-w#CountingPolicy -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois#DatastreamDescription">
-        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
-        <rdfs:comment>A web resource whose foaf:primaryTopic or foaf:topics include vois:DataStream.</rdfs:comment>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#CountingPolicy">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-w#Policy"/>
+        <rdfs:comment>vois:CountingPolicy is used with vois:PhysicalWindow or vois:TimeBasedWindow, it has two property step and unit defining the difference between two consecutive windows.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois#Endpoint -->
+    <!-- http://streamreasoning.org/vois-w#Event -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois#Endpoint">
-        <rdfs:comment>An interface exposed by a communicating party or by a communication channel</rdfs:comment>
-        <rdfs:seeAlso>https://en.wikipedia.org/wiki/Communication_endpoint</rdfs:seeAlso>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#Event">
+        <rdfs:comment>A event that start/end a vois:Window</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois#FiniteStreamPartiton -->
+    <!-- http://streamreasoning.org/vois-w#PhysicalWindow -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois#FiniteStreamPartiton">
-        <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-        <rdfs:comment>Portion of the time-varying data item streamed</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/vois#InstantaneousStreamElement -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/vois#InstantaneousStreamElement">
-        <rdfs:comment>single stream element in the data stream with temporal metadata</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/vois#PhysicalWindow -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/vois#PhysicalWindow">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#Window"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#PhysicalWindow">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-w#Window"/>
         <rdfs:comment>Window defined by an interval size (in units of RDF elements)</rdfs:comment>
+        <rdfs:isDefinedBy>https://people.csail.mit.edu/tatbul/publications/maxstream_vldb10.pdf</rdfs:isDefinedBy>
+        <rdfs:label>Physical Window</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois#PhysicalWindowOperator -->
+    <!-- http://streamreasoning.org/vois-w#Policy -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois#PhysicalWindowOperator">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#WindowOperator"/>
-        <owl:disjointWith rdf:resource="http://streamreasoning.org/vois#TimeBasedWindowOperator"/>
-        <rdfs:comment>Operator sampling the data stream into PhysicalWindow, i.e. based on the size of the window not a time interval</rdfs:comment>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#Policy">
+        <owl:disjointWith rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:comment>vois:Policy describes the criteria used to define a window.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois#RSPEndpoint -->
+    <!-- http://streamreasoning.org/vois-w#SemanticWindow -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois#RSPEndpoint">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#Endpoint"/>
-        <owl:disjointWith rdf:resource="http://streamreasoning.org/vois#StreamEndpoint"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#SemanticWindow">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-w#Window"/>
+        <rdfs:comment>Window that capture some period of activity over a subset of the data, in this case per key. Typically they are defined by a timeout gap.</rdfs:comment>
+        <rdfs:isDefinedBy>http://dl.acm.org/citation.cfm?id=2824076</rdfs:isDefinedBy>
+        <rdfs:label>Semantic Window</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois#S2SOperator -->
+    <!-- http://streamreasoning.org/vois-w#SessionPolicy -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois#S2SOperator">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
-        <rdfs:comment>Generic operator to represent the operator transforming one or more streams another stream</rdfs:comment>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#SessionPolicy">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-w#Policy"/>
+        <rdfs:comment>vois:SessionPolicy ise used with semantic window. it define the starting and ending events of a window.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois#StreamEndpoint -->
+    <!-- http://streamreasoning.org/vois-w#TimeBasedWindow -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois#StreamEndpoint">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#Endpoint"/>
-        <rdfs:isDefinedBy>Websocket interface exposed for stream consumers</rdfs:isDefinedBy>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/vois#StreamSourceDescription -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/vois#StreamSourceDescription">
-        <rdfs:comment>Static information about the source generating the stream</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/vois#SwollenStream -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/vois#SwollenStream">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#DataStream"/>
-        <rdfs:comment>Stream derived from other streams</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/vois#TimeBasedWindow -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/vois#TimeBasedWindow">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#Window"/>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#TimeBasedWindow">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois-w#Window"/>
         <rdfs:comment>Window defined by an interval size (in units of time)</rdfs:comment>
+        <rdfs:isDefinedBy>https://people.csail.mit.edu/tatbul/publications/maxstream_vldb10.pdf</rdfs:isDefinedBy>
+        <rdfs:label>Time Based Window</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois#TimeBasedWindowOperator -->
+    <!-- http://streamreasoning.org/vois-w#Window -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois#TimeBasedWindowOperator">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#WindowOperator"/>
-        <rdfs:comment>Operator sampling the data stream into TimeBasedWindow, i.e. based on time intervals not the size of the window</rdfs:comment>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#Window">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:comment>a set of RDF statements extracted from a stream</rdfs:comment>
+        <rdfs:isDefinedBy>http://dblp.uni-trier.de/rec/journals/ijswis/DellAglioVCC14</rdfs:isDefinedBy>
+        <rdfs:label>window</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://streamreasoning.org/vois#Window -->
+    <!-- http://streamreasoning.org/vois-w#WindowedStream -->
 
-    <owl:Class rdf:about="http://streamreasoning.org/vois#Window">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#FiniteStreamPartiton"/>
-        <rdfs:comment>Portion of the time-varying data item streamed generated by a WindowOperator</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/vois#WindowOperator -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/vois#WindowOperator">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
-        <rdfs:comment>Operator that sample the data stream to window</rdfs:comment>
+    <owl:Class rdf:about="http://streamreasoning.org/vois-w#WindowedStream">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/vois#DataStream"/>
+        <rdfs:comment>A countably infinte set of vois:Window that combined together compose a vois:DataStream .</rdfs:comment>
+        <rdfs:label>windowed stream</rdfs:label>
     </owl:Class>
     
 
@@ -905,18 +844,6 @@ dGraph is a named graph suggested to catch the static information about the stre
     <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
 
     <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    
-
-
-    <!-- http://www.w3.org/2006/time#TemporalEntity -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Entity -->
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity"/>
     
 
 
@@ -951,33 +878,33 @@ dGraph is a named graph suggested to catch the static information about the stre
     
 
 
-    <!-- http://streamreasoning.org/vois#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano -->
+    <!-- http://streamreasoning.org/vois-w#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano -->
 
-    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano">
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois-w#DepartmentOfEletronicInformaticBioEngineeringPolitecnicoDiMilano">
         <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://streamreasoning.org/vois#EmanueleDellaValle -->
+    <!-- http://streamreasoning.org/vois-w#EmanueleDellaValle -->
 
-    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois#EmanueleDellaValle">
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois-w#EmanueleDellaValle">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://streamreasoning.org/vois#RiccardoTommasini -->
+    <!-- http://streamreasoning.org/vois-w#RiccardoTommasini -->
 
-    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois#RiccardoTommasini">
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois-w#RiccardoTommasini">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://streamreasoning.org/vois#YehiaAboSedira -->
+    <!-- http://streamreasoning.org/vois-w#YehiaAboSedira -->
 
-    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois#YehiaAboSedira">
+    <owl:NamedIndividual rdf:about="http://streamreasoning.org/vois-w#YehiaAboSedira">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
@@ -1026,27 +953,9 @@ dGraph is a named graph suggested to catch the static information about the stre
         <adms:accessURL>http://vocab.deri.ie/void.ttl</adms:accessURL>
         <adms:status rdf:resource="http://purl.org/adms/status/Completed"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://streamreasoning.org/vois#RSPEndpoint">
-        <rdfs:isDefinedBy>RSP engine interface exposed for stream consumers to register continuous queries</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://streamreasoning.org/vois#start">
-        <rdfs:comment>Point to starting point of a vois:Window. can be a time instance or event</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
-        <rdfs:comment>The websocket URI to consume the stream</rdfs:comment>
-    </rdf:Description>
 </rdf:RDF>
 
 
+
 <!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

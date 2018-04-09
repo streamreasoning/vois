@@ -1,0 +1,811 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ex.org/swollen/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://ex.org/swollen/">
+    <Prefix name="" IRI="http://ex.org/swollen/"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="sd" IRI="http://www.w3.org/ns/sparql-service-description#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="adms" IRI="http://www.w3.org/ns/adms#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="prov" IRI="http://www.w3.org/ns/prov#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
+    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="void" IRI="http://rdfs.org/ns/void#"/>
+    <Prefix name="vois" IRI="http://streamreasoning.org/vois#"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="voisp" IRI="http://streamreasoning.org/vois-prov#"/>
+    <Prefix name="voisw" IRI="http://streamreasoning.org/vois-w#"/>
+    <Import>http://streamreasoning.org/vois-w/1.0.0</Import>
+    <Import>http://streamreasoning.org/vois-prov/1.0.0</Import>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_datastream"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vois:tboxLocation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="instant_2017_06_05_00_38"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="prov:wasGeneratedBy"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vois:streamLocation"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="prov:generatedAtTime"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="instant_2017_06_05_00_42"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vois:affluents"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_igraph_123_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="ex_org"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vois:sGraph"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_dgraph_456"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="void:dataDump"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_igraph_456_1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="vois:CountingPolicy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_sgraph"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_window_3"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vois:step"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:started"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="instant_2017_06_05_00_37"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_policy_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_aff_datastream_123"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="unitGraph"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="prov:wasAssociatedWith"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:unit"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:step"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="ex_triple_wave"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="instant_2017_06_05_00_41"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:ended"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_igraph_123_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_window_2"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:hasWindow"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_policy_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_annotation"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="time:inXSDDateTime"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:policy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="instant_2017_06_05_00_40"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vois:lastUpdated"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_igraph_123_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_dgraph_123"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vois:describedBy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_window_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_igraph_456_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_aff_datastream_456"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_transformation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="instant_2017_06_05_00_39"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Organization"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:slidingUnit"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:dataDump"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="prov:used"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:instant"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:hasActiveWindow"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="prov:wasAttributedTo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:range"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vois:slidingUnit"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:license"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_window_4"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="voisw:inWindowedStream"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_lib"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="mobile_wave_igraph_456_2"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vois:refers"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Organization"/>
+        <NamedIndividual IRI="ex_org"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="prov:SoftwareAgent"/>
+        <NamedIndividual IRI="ex_triple_wave"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:instant"/>
+        <NamedIndividual IRI="instant_2017_06_05_00_37"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:instant"/>
+        <NamedIndividual IRI="instant_2017_06_05_00_38"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:instant"/>
+        <NamedIndividual IRI="instant_2017_06_05_00_39"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:instant"/>
+        <NamedIndividual IRI="instant_2017_06_05_00_40"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:instant"/>
+        <NamedIndividual IRI="instant_2017_06_05_00_41"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:instant"/>
+        <NamedIndividual IRI="instant_2017_06_05_00_42"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:DataStream"/>
+        <NamedIndividual IRI="mobile_wave_aff_datastream_123"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:DataStream"/>
+        <NamedIndividual IRI="mobile_wave_aff_datastream_456"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="voisp:Operator"/>
+        <NamedIndividual IRI="mobile_wave_annotation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="voisw:WindowedStream"/>
+        <NamedIndividual IRI="mobile_wave_datastream"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:DescriptionGraph"/>
+        <NamedIndividual IRI="mobile_wave_dgraph_123"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:DescriptionGraph"/>
+        <NamedIndividual IRI="mobile_wave_dgraph_456"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:InstantaneousGraph"/>
+        <NamedIndividual IRI="mobile_wave_igraph_123_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:InstantaneousGraph"/>
+        <NamedIndividual IRI="mobile_wave_igraph_123_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:InstantaneousGraph"/>
+        <NamedIndividual IRI="mobile_wave_igraph_123_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:InstantaneousGraph"/>
+        <NamedIndividual IRI="mobile_wave_igraph_456_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:InstantaneousGraph"/>
+        <NamedIndividual IRI="mobile_wave_igraph_456_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:InstantaneousGraph"/>
+        <NamedIndividual IRI="mobile_wave_igraph_456_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="prov:SoftwareAgent"/>
+        <NamedIndividual IRI="mobile_wave_lib"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="voisw:CountingPolicy"/>
+        <NamedIndividual IRI="mobile_wave_policy_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:CountingPolicy"/>
+        <NamedIndividual IRI="mobile_wave_policy_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vois:StreamGraph"/>
+        <NamedIndividual IRI="mobile_wave_sgraph"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="voisp:UnionOperator"/>
+        <NamedIndividual IRI="mobile_wave_transformation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="voisw:TimeBasedWindow"/>
+        <NamedIndividual IRI="mobile_wave_window_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="voisw:PhysicalWindow"/>
+        <NamedIndividual IRI="mobile_wave_window_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="voisw:TimeBasedWindow"/>
+        <NamedIndividual IRI="mobile_wave_window_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="voisw:PhysicalWindow"/>
+        <NamedIndividual IRI="mobile_wave_window_4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:instant"/>
+        <AnonymousIndividual nodeID="_:genid717"/>
+    </ClassAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ex_org</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">exOrg</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:homepage"/>
+        <IRI>ex_org</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.ex.org/</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:actedOnBehalfOf"/>
+        <IRI>ex_triple_wave</IRI>
+        <IRI>ex_org</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <IRI>ex_triple_wave</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TripleWave Instance</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="time:inXSDDateTime"/>
+        <IRI>instant_2017_06_05_00_37</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:37:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="time:inXSDDateTime"/>
+        <IRI>instant_2017_06_05_00_38</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:38:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="time:inXSDDateTime"/>
+        <IRI>instant_2017_06_05_00_39</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:39:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="time:inXSDDateTime"/>
+        <IRI>instant_2017_06_05_00_40</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:40:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="time:inXSDDateTime"/>
+        <IRI>instant_2017_06_05_00_41</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:41:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="time:inXSDDateTime"/>
+        <IRI>instant_2017_06_05_00_42</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:42:37.774</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:wasGeneratedBy"/>
+        <IRI>mobile_wave_aff_datastream_123</IRI>
+        <IRI>mobile_wave_annotation</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:wasGeneratedBy"/>
+        <IRI>mobile_wave_aff_datastream_456</IRI>
+        <IRI>mobile_wave_annotation</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:wasAssociatedWith"/>
+        <IRI>mobile_wave_annotation</IRI>
+        <IRI>mobile_wave_lib</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>ex_org</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Mobile wave swollen stream</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:license"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>https://creativecommons.org/licenses/by-nc/4.0/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:publisher"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>ex_org</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:title"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">mobilewave</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:sGraph"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>mobile_wave_sgraph</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:streamFormat"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <AbbreviatedIRI>void:ttl</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:hasActiveWindow"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>mobile_wave_window_1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:hasActiveWindow"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>mobile_wave_window_2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:hasWindow"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>mobile_wave_window_3</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:hasWindow"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>mobile_wave_window_4</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:wasAttributedTo"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>ex_triple_wave</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:wasGeneratedBy"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>mobile_wave_transformation</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:homepage"/>
+        <IRI>mobile_wave_datastream</IRI>
+        <IRI>http://www.ex.org/mobilewave</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:describedBy"/>
+        <IRI>mobile_wave_igraph_123_1</IRI>
+        <IRI>mobile_wave_dgraph_123</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:sGraph"/>
+        <IRI>mobile_wave_igraph_123_1</IRI>
+        <IRI>mobile_wave_sgraph</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:generatedAtTime"/>
+        <IRI>mobile_wave_igraph_123_1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:42:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:describedBy"/>
+        <IRI>mobile_wave_igraph_123_2</IRI>
+        <IRI>mobile_wave_dgraph_123</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:sGraph"/>
+        <IRI>mobile_wave_igraph_123_2</IRI>
+        <IRI>mobile_wave_sgraph</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:generatedAtTime"/>
+        <IRI>mobile_wave_igraph_123_2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:40:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:describedBy"/>
+        <IRI>mobile_wave_igraph_123_3</IRI>
+        <IRI>mobile_wave_dgraph_123</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:sGraph"/>
+        <IRI>mobile_wave_igraph_123_3</IRI>
+        <IRI>mobile_wave_sgraph</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:generatedAtTime"/>
+        <IRI>mobile_wave_igraph_123_3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:38:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:describedBy"/>
+        <IRI>mobile_wave_igraph_456_1</IRI>
+        <IRI>mobile_wave_dgraph_456</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:sGraph"/>
+        <IRI>mobile_wave_igraph_456_1</IRI>
+        <IRI>mobile_wave_sgraph</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:generatedAtTime"/>
+        <IRI>mobile_wave_igraph_456_1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:37:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:describedBy"/>
+        <IRI>mobile_wave_igraph_456_2</IRI>
+        <IRI>mobile_wave_dgraph_456</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:sGraph"/>
+        <IRI>mobile_wave_igraph_456_2</IRI>
+        <IRI>mobile_wave_sgraph</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:generatedAtTime"/>
+        <IRI>mobile_wave_igraph_456_2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:39:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:describedBy"/>
+        <IRI>mobile_wave_igraph_456_3</IRI>
+        <IRI>mobile_wave_dgraph_456</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:sGraph"/>
+        <IRI>mobile_wave_igraph_456_3</IRI>
+        <IRI>mobile_wave_sgraph</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:generatedAtTime"/>
+        <IRI>mobile_wave_igraph_456_3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:41:00.000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <IRI>mobile_wave_lib</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MobileWave Plugin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:slidingUnit"/>
+        <IRI>mobile_wave_policy_1</IRI>
+        <AbbreviatedIRI>time:unitMinute</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:step"/>
+        <IRI>mobile_wave_policy_1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:slidingUnit"/>
+        <IRI>mobile_wave_policy_2</IRI>
+        <IRI>unitGraph</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:step"/>
+        <IRI>mobile_wave_policy_2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:affluents"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <IRI>mobile_wave_dgraph_123</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:affluents"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <IRI>mobile_wave_dgraph_456</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:lastUpdated"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:42:37.774</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:refers"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <IRI>mobile_wave_igraph_123_1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:refers"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <IRI>mobile_wave_igraph_123_2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:refers"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <IRI>mobile_wave_igraph_123_3</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:refers"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <IRI>mobile_wave_igraph_456_1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:refers"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <IRI>mobile_wave_igraph_456_2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:refers"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <IRI>mobile_wave_igraph_456_3</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:streamLocation"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">ws://localhost:4040/mobilewave</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="vois:tboxLocation"/>
+        <IRI>mobile_wave_sgraph</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ex.org/mobilewave.owl</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:used"/>
+        <IRI>mobile_wave_transformation</IRI>
+        <IRI>mobile_wave_aff_datastream_123</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:used"/>
+        <IRI>mobile_wave_transformation</IRI>
+        <IRI>mobile_wave_aff_datastream_456</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="prov:wasAssociatedWith"/>
+        <IRI>mobile_wave_transformation</IRI>
+        <IRI>ex_triple_wave</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="void:dataDump"/>
+        <IRI>mobile_wave_window_1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://ex.org/mobile_wave_window_1.rdf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:ended"/>
+        <IRI>mobile_wave_window_1</IRI>
+        <IRI>instant_2017_06_05_00_42</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:inWindowedStream"/>
+        <IRI>mobile_wave_window_1</IRI>
+        <IRI>mobile_wave_datastream</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:policy"/>
+        <IRI>mobile_wave_window_1</IRI>
+        <IRI>mobile_wave_policy_1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:range"/>
+        <IRI>mobile_wave_window_1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:started"/>
+        <IRI>mobile_wave_window_1</IRI>
+        <IRI>instant_2017_06_05_00_38</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:unit"/>
+        <IRI>mobile_wave_window_1</IRI>
+        <AbbreviatedIRI>time:unitMinute</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="void:dataDump"/>
+        <IRI>mobile_wave_window_2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://ex.org/mobile_wave_window_2.rdf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:ended"/>
+        <IRI>mobile_wave_window_2</IRI>
+        <IRI>instant_2017_06_05_00_42</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:inWindowedStream"/>
+        <IRI>mobile_wave_window_2</IRI>
+        <IRI>mobile_wave_datastream</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:policy"/>
+        <IRI>mobile_wave_window_2</IRI>
+        <IRI>mobile_wave_policy_2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:range"/>
+        <IRI>mobile_wave_window_2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:started"/>
+        <IRI>mobile_wave_window_2</IRI>
+        <IRI>instant_2017_06_05_00_41</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:unit"/>
+        <IRI>mobile_wave_window_2</IRI>
+        <IRI>unitGraph</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:dataDump"/>
+        <IRI>mobile_wave_window_3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://ex.org/mobile_wave_window_3.rdf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:ended"/>
+        <IRI>mobile_wave_window_3</IRI>
+        <IRI>instant_2017_06_05_00_38</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:inWindowedStream"/>
+        <IRI>mobile_wave_window_3</IRI>
+        <IRI>mobile_wave_datastream</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:policy"/>
+        <IRI>mobile_wave_window_3</IRI>
+        <IRI>mobile_wave_policy_1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:range"/>
+        <IRI>mobile_wave_window_3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:started"/>
+        <IRI>mobile_wave_window_3</IRI>
+        <AnonymousIndividual nodeID="_:genid717"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:unit"/>
+        <IRI>mobile_wave_window_3</IRI>
+        <AbbreviatedIRI>time:unitMinute</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:dataDump"/>
+        <IRI>mobile_wave_window_4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://ex.org/mobile_wave_window_4.rdf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:ended"/>
+        <IRI>mobile_wave_window_4</IRI>
+        <IRI>instant_2017_06_05_00_40</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:inWindowedStream"/>
+        <IRI>mobile_wave_window_4</IRI>
+        <IRI>mobile_wave_datastream</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:policy"/>
+        <IRI>mobile_wave_window_4</IRI>
+        <IRI>mobile_wave_policy_2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:range"/>
+        <IRI>mobile_wave_window_4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:started"/>
+        <IRI>mobile_wave_window_4</IRI>
+        <IRI>instant_2017_06_05_00_39</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="voisw:unit"/>
+        <IRI>mobile_wave_window_4</IRI>
+        <IRI>unitGraph</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>unitGraph</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">RDF Graph</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="time:inXSDDateTime"/>
+        <AnonymousIndividual nodeID="_:genid717"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-05T00:34:00.000</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
